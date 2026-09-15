@@ -12,9 +12,9 @@ Any static server from the repo root, for example:
 
 ## Deployment
 
-GitHub Pages serves `main` from the repo root. `.nojekyll` turns off Jekyll
-processing.
+Netlify deploys this repo from `main`. There is no build step: `netlify.toml`
+publishes the repo root.
 
-Asset paths are relative, so the page works both under a project-site subpath
-and at a domain root. Once fayepapadopoulos.com is registered, add a `CNAME`
-file containing that domain and point its DNS at GitHub Pages.
+Asset paths are relative, so the page works at a domain root and under a
+subpath. Once fayepapadopoulos.com is registered, add it as a custom domain
+in Netlify.

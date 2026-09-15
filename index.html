@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faye Papadopoulos — Graphic Designer, Berlin</title>
+<meta name="description" content="Faye Papadopoulos, graphic designer in Berlin. Brand systems, editorial, packaging and social for Greasy Fingers, NOIL and by Faye. Open to full-time roles.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Faye Papadopoulos — Graphic Designer, Berlin">
+<meta property="og:description" content="Brand systems, editorial, packaging and social. Drawn, specified, and still looked after once they are live. Open to full-time roles in Berlin.">
+<meta property="og:image" content="/faye-headshot.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* forest system */
+  --forest:#14361F;      /* deepest — rail, bands, footer */
+  --forest-2:#1C4A2C;    /* lifted surface on forest */
+  --green:#256B41;       /* text-safe signal on light */
+  --green-br:#4EA974;    /* bright — signal on dark */
+  --green-gh:#C9DCCF;    /* ghost green — hairlines on dark */
+
+  --bg:#F5F5F0;
+  --card:#FFFFFF;
+  --ink:#101210;
+  --dim:#7A7D76;
+  --line:#E2E3DA;
+
+  --fd:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --fm:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--fd);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--forest);color:#EAF0EA}
+::-webkit-scrollbar{width:11px;height:9px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--forest);border:3px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+
+.m{font-family:var(--fm);font-size:10.5px;letter-spacing:.01em;text-transform:uppercase;color:var(--dim)}
+.m b{color:var(--ink);font-weight:500}
+.sig{color:var(--green)}
+/* bracket mark used before section numbers */
+.br::before{content:"⌜";color:var(--green);margin-right:6px;font-family:var(--fm)}
+
+/* ── shell: forest rail + scrolling column ── */
+.shell{display:grid;grid-template-columns:258px 1fr;min-height:100vh}
+@media(max-width:1000px){.shell{grid-template-columns:1fr}}
+
+.rail{
+  position:sticky;top:0;height:100vh;align-self:start;
+  background:var(--bg);color:var(--ink);
+  border-right:1px solid var(--line);
+  padding:clamp(32px,6.5vh,74px) 22px 26px;display:flex;flex-direction:column;gap:20px;
+}
+/* single green edge — the only green on the rail */
+.rail::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--forest)}
+@media(max-width:1000px){
+  .rail{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    border-right:0;border-bottom:1px solid var(--line)}
+  .rail::before{width:auto;right:0;bottom:auto;height:3px}
+}
+.rail a:hover{color:var(--green)}
+.rail .name{font-weight:700;font-size:20px;letter-spacing:-.025em;line-height:1.06}
+.rail .name::after{content:"";display:block;width:26px;height:3px;background:var(--forest);margin-top:10px}
+.rail nav{display:flex;flex-direction:column;gap:1px;margin-top:auto}
+@media(max-width:1000px){.rail nav{flex-direction:row;flex-wrap:wrap;gap:14px;margin-top:0}}
+.rail nav a{font-family:var(--fm);font-size:11px;text-transform:uppercase;color:var(--dim);padding:4px 0;transition:color .2s,padding-left .2s;border-bottom:1px solid var(--line)}
+@media(max-width:1000px){.rail nav a{border:0}}
+.rail nav a:hover{color:var(--ink);padding-left:5px}
+/* on a phone the rail is a header strip, not a sidebar: everything the
+   availability box says is already in the hero chip and the facts band */
+@media(max-width:1000px){
+  .rail{gap:14px;padding:15px 18px}
+  .rail .avail{display:none}
+  .rail .name{font-size:17px}
+  /* LinkedIn wrapped the nav onto a second row; it is already a hero button and a footer entry */
+  .rail nav a:last-child{display:none}
+  .rail .name::after{margin-top:7px}
+}
+.avail{border:1px solid var(--line);padding:12px;background:var(--card)}
+.status{display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:10.5px;text-transform:uppercase;color:var(--ink)}
+.status i{width:7px;height:7px;background:var(--green);border-radius:50%;display:block;box-shadow:0 0 0 0 rgba(37,107,65,.7);animation:ping 2.4s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(37,107,65,.5)}70%{box-shadow:0 0 0 9px rgba(37,107,65,0)}100%{box-shadow:0 0 0 0 rgba(37,107,65,0)}}
+
+.col{padding:0 clamp(16px,3vw,52px);min-width:0}
+
+/* ── hero ─────────────────────────────────── */
+.hero{padding:clamp(32px,6.5vh,74px) 0 clamp(26px,5vh,60px)}
+.hero h1{font-weight:700;font-size:clamp(32px,4.6vw,64px);line-height:1.02;letter-spacing:-.035em;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.1em;height:.09em;background:var(--green);opacity:.28}
+.hero .sub{margin-top:22px;font-size:clamp(15px,1.5vw,19px);line-height:1.55;max-width:60ch;color:#2A2C29}
+
+/* hero split — words on the left, a face on the right */
+.hero-grid{display:grid;grid-template-columns:1fr minmax(0,278px);gap:clamp(20px,3.4vw,54px);align-items:start}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:24px}
+  /* buy back enough room to keep the email and CV buttons on the first screen */
+  .hero{padding-top:clamp(22px,3vh,40px)}
+  .eyebrow{margin-bottom:12px}
+  .cta{margin-top:20px}
+}
+
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:20px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--green);color:var(--green);border-radius:99px;padding:3px 10px 4px;font-family:var(--fm);font-size:9.5px;letter-spacing:.02em;text-transform:uppercase}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--green);display:block;animation:ping 2.4s infinite}
+.chip.eu{border-color:var(--forest);color:var(--forest)}
+
+/* portrait — a face reads first, and a Berlin application is expected to carry one */
+.portrait{position:relative;background:var(--card);border:1px solid var(--line);box-shadow:5px 5px 0 rgba(20,54,31,.09)}
+.portrait::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--forest);z-index:1}
+.portrait img{width:100%;height:auto;display:block;aspect-ratio:3/4;object-fit:cover;object-position:50% 42%;filter:saturate(.96)}
+.portrait figcaption{padding:11px 13px 13px;border-top:1px solid var(--line)}
+.portrait figcaption b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.025em;line-height:1.15}
+.portrait figcaption .m{display:block;margin-top:4px;font-size:9.5px;line-height:1.5}
+@media(max-width:900px){
+  /* on a phone it becomes the header of a CV: small face, name beside it, above everything */
+  .portrait{order:-1;display:grid;grid-template-columns:104px 1fr;align-items:center;max-width:430px}
+  .portrait img{aspect-ratio:1/1;object-position:50% 34%}
+  .portrait figcaption{border-top:0;border-left:1px solid var(--line);padding:12px 15px}
+}
+
+/* contact, reachable without scrolling */
+.cta{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(22px,3.4vh,30px)}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:11px;letter-spacing:.03em;text-transform:uppercase;padding:11px 15px;border:1px solid var(--forest);transition:background .22s,color .22s,border-color .22s}
+.btn.solid{background:var(--forest);color:#E9F0EA}
+.btn.solid:hover{background:var(--green)}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{background:var(--forest);color:#E9F0EA}
+.btn:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* fast facts — the things a recruiter's eye hunts for, in one band */
+.facts{
+  margin-top:clamp(30px,5vh,58px);border-top:3px solid var(--forest);
+  padding-top:clamp(16px,2.6vh,26px);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(15px,2vw,24px) clamp(14px,2.4vw,30px);
+}
+@media(max-width:900px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.facts{grid-template-columns:1fr;gap:14px}}
+.facts>div{padding-left:14px;border-left:1px solid var(--line);transition:border-color .25s}
+.facts>div:hover{border-color:var(--green)}
+.facts b{display:block;font-size:clamp(14.5px,1.3vw,17px);font-weight:600;letter-spacing:-.02em;line-height:1.28;margin:6px 0 4px}
+.facts i{font-style:normal;display:block;font-size:12.5px;line-height:1.45;color:var(--dim)}
+.facts .m{line-height:1.4}
+
+/* ── section ──────────────────────────────── */
+.sec{padding:clamp(46px,9vh,110px) 0 0}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:2px solid var(--forest);padding-bottom:9px;margin-bottom:26px}
+.sec-h h2{font-size:clamp(15px,1.5vw,18px);font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+
+/* ── project cards ────────────────────────── */
+.proj{background:var(--card);border:1px solid var(--line);margin-bottom:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.proj:hover{border-color:var(--forest);box-shadow:0 2px 0 rgba(20,54,31,.08)}
+.proj-h{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+@media(max-width:700px){.proj-h{grid-template-columns:auto 1fr;gap:8px}.proj-h .pill{grid-column:1/-1}}
+.proj-h h3{font-size:clamp(19px,2.3vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.pill{font-family:var(--fm);font-size:10px;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:5px 11px;white-space:nowrap;color:var(--dim)}
+.pill.live{border-color:var(--green);color:var(--green)}
+.proj-b{display:grid;grid-template-columns:1fr 1.25fr}
+@media(max-width:900px){.proj-b{grid-template-columns:1fr}}
+.proj-txt{padding:18px}
+.proj-txt p{font-size:14px;line-height:1.6;margin-bottom:13px;max-width:46ch;color:#21231F}
+.proj-txt mark{background:rgba(37,107,65,.14);color:var(--green);padding:0 3px;font-weight:500}
+.kv{border-top:1px solid var(--line);margin-top:4px}
+.kv>div{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}
+.kv>div:last-child{border-bottom:0}
+.kv span{font-family:var(--fm);font-size:10px;text-transform:uppercase;color:var(--green);padding-top:2px}
+
+/* image grid — full colour at rest, click to enlarge */
+.proj-img{display:grid;gap:1px;background:var(--line);border-left:1px solid var(--line)}
+@media(max-width:900px){.proj-img{border-left:0;border-top:1px solid var(--line)}}
+.proj-img.n2{grid-template-columns:repeat(2,1fr)}
+.proj-img.n3{grid-template-columns:repeat(3,1fr)}
+.proj-img.n4{grid-template-columns:repeat(4,1fr)}
+.proj-img.n6{grid-template-columns:repeat(3,1fr)}
+.proj-img.one{grid-template-columns:1fr}
+.proj-img.sites .sh img{aspect-ratio:1600/799}
+.proj-img.bycol{grid-auto-flow:column;grid-template-rows:repeat(2,auto)}
+@media(max-width:600px){.proj-img{grid-template-columns:repeat(2,1fr) !important}
+  .proj-img.bycol{grid-auto-flow:row !important;grid-template-rows:none !important}
+  .proj-img.spread,.proj-img.r169,.proj-img.vids,.proj-img.sheet,.proj-img.mixed,.proj-img.one,.proj-img.sites,.wposter2 .proj-img{grid-template-columns:1fr !important}}
+.sh{
+  position:relative;overflow:hidden;background:var(--card);display:block;
+  padding:0;border:0;margin:0;width:100%;font:inherit;color:inherit;
+  cursor:zoom-in;-webkit-appearance:none;appearance:none;
+}
+.sh img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.sh:hover img,.sh:focus-visible img{transform:scale(1.028)}
+/* a quiet corner cue that the image opens */
+.sh::after{
+  content:"⤢";position:absolute;right:7px;bottom:7px;width:25px;height:25px;
+  display:grid;place-items:center;background:var(--forest);color:#E9F0EA;
+  font-size:12px;line-height:1;opacity:0;transform:translateY(5px);
+  transition:opacity .28s,transform .28s;pointer-events:none;
+}
+.sh:hover::after,.sh:focus-visible::after{opacity:1;transform:none}
+.sh:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.proj-img.wide .sh img{aspect-ratio:4/3}
+.proj-img.spread .sh img{aspect-ratio:2/1}
+.proj-img.sq .sh img{aspect-ratio:1/1}
+.proj-img.a4 .sh img{aspect-ratio:1/1.414}
+.proj-img.r32 .sh img{aspect-ratio:3/2}
+.proj-img.r169 .sh img{aspect-ratio:16/9}
+.proj-img.sheet .sh img{aspect-ratio:1404/993}
+/* video shares the grid with the stills, but letterboxes instead of cropping:
+   the two clips are 2:1 and 16:9 and neither should be cut to match the other */
+.vid{
+  display:block;width:100%;height:auto;aspect-ratio:16/9;
+  object-fit:contain;background:var(--forest);border:0;
+}
+.vid:focus-visible{outline:2px solid var(--green-br);outline-offset:-2px}
+.vid.lead{grid-column:1/-1;aspect-ratio:2/1}
+/* the summary sheet is dense, so it gets held to a readable width rather than bled */
+.run.wsheet .proj-img{max-width:680px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+/* an A4 poster bled to the full column would be 850px tall and swamp its own card */
+.run.wposter .proj-img{max-width:400px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.run.wposter2 .proj-img{max-width:840px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.proj-img.r43 .sh img{aspect-ratio:4/3}
+/* the book pages are 585x715 with a wide empty margin top and bottom, so the frame
+   is cut to the printed image band and the page white is cropped away */
+.proj-img.book .sh img{aspect-ratio:585/355;object-fit:cover;object-position:center 52%}
+/* a film poster opens the film in the same viewer the images use, so the grid
+   stays tight and the player still gets the whole screen */
+.sh.play{cursor:pointer}
+.sh.play::after{content:"▶";padding-left:2px}
+.sh.play img{filter:brightness(.84);transition:transform .8s cubic-bezier(.2,.7,.3,1),filter .3s}
+.sh.play:hover img,.sh.play:focus-visible img{filter:brightness(1)}
+.sh.play .pl{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+  width:clamp(42px,4.6vw,56px);aspect-ratio:1;border-radius:50%;
+  background:rgba(11,26,17,.58);border:1px solid rgba(201,220,207,.55);
+  display:grid;place-items:center;color:#E9F0EA;font-size:13px;padding-left:3px;
+  pointer-events:none;transition:transform .3s,background .3s;
+}
+.sh.play:hover .pl,.sh.play:focus-visible .pl{transform:translate(-50%,-50%) scale(1.09);background:var(--forest)}
+.sh.play .rt{
+  position:absolute;left:0;bottom:0;z-index:2;pointer-events:none;
+  font-family:var(--fm);font-size:10px;letter-spacing:.04em;color:#E9F0EA;
+  background:rgba(11,26,17,.72);padding:5px 9px;
+}
+/* the side-by-side split stretched the image grid to the height of the text
+   column, which left a white band under every image - let it size itself */
+@media(min-width:901px){
+  .proj-b>.proj-img{align-self:start;border-left:0}
+  .proj-b>.proj-txt{border-right:1px solid var(--line)}
+}
+
+/* the lead case study runs full width instead: prose and spec on top,
+   imagery below in two labelled runs, so the 4:5 posts get real size */
+.feat-top{display:grid;grid-template-columns:1fr 1fr .92fr;gap:clamp(18px,2.3vw,32px);padding:19px 18px 22px}
+@media(max-width:1150px){.feat-top{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.feat-top{grid-template-columns:1fr;gap:17px}}
+.feat-top p{font-size:14px;line-height:1.6;margin-bottom:13px;max-width:48ch;color:#21231F}
+.feat-top p:last-child{margin-bottom:0}
+.feat-top mark{background:rgba(37,107,65,.14);color:var(--green);padding:0 3px;font-weight:500}
+.feat-top .kv{margin-top:0}
+.run figcaption{font-family:var(--fm);font-size:10.5px;letter-spacing:.02em;color:var(--dim);padding:10px 18px;background:#FAFAF7;border-top:1px solid var(--line)}
+.run figcaption b{color:var(--ink);font-weight:500;text-transform:uppercase}
+.run .proj-img{border-left:0;border-top:1px solid var(--line)}
+
+/* ── lightbox ─────────────────────────────── */
+.lb{
+  position:fixed;inset:0;z-index:200;display:grid;place-items:center;
+  background:rgba(9,20,13,.95);padding:clamp(40px,6vh,70px) clamp(14px,4vw,72px);
+  opacity:0;transition:opacity .22s;
+}
+.lb[hidden]{display:none}
+.lb.on{opacity:1}
+.lb-fig{max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb-fig img{
+  max-width:100%;max-height:78vh;object-fit:contain;display:block;
+  background:#0C1A11;box-shadow:0 20px 60px rgba(0,0,0,.5);
+  transform:scale(.985);transition:transform .28s cubic-bezier(.2,.7,.3,1);
+}
+.lb.on .lb-fig img{transform:none}
+.lb-frame{
+  width:min(94vw,1180px);aspect-ratio:16/9;max-height:78vh;
+  border:0;background:#000;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.lb-fig img[hidden],.lb-frame[hidden]{display:none}
+.lb-btn{
+  position:absolute;background:transparent;border:1px solid rgba(201,220,207,.3);
+  color:#E9F0EA;cursor:pointer;font-family:var(--fm);line-height:1;
+  transition:background .2s,border-color .2s;
+}
+.lb-btn:hover{background:var(--forest);border-color:var(--green-br)}
+.lb-btn:focus-visible{outline:2px solid var(--green-br);outline-offset:2px}
+.lb-close{top:14px;right:14px;width:38px;height:38px;font-size:15px}
+.lb-nav{top:50%;transform:translateY(-50%);width:38px;height:56px;font-size:22px}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+.lb-count{
+  position:absolute;top:20px;left:16px;font-family:var(--fm);font-size:11px;
+  letter-spacing:.06em;color:#9FB3A5;
+}
+@media(max-width:700px){
+  .lb-nav{top:auto;bottom:14px;transform:none;height:42px}
+  .lb-fig img{max-height:66vh}
+}
+@media(prefers-reduced-motion:reduce){
+  .sh img,.lb,.lb-fig img,.sh::after{transition:none}
+}
+
+/* featured card */
+.proj.feat{border:1px solid var(--forest);box-shadow:5px 5px 0 rgba(20,54,31,.1)}
+.proj.feat .proj-h{background:var(--forest);color:#E9F0EA;border-bottom-color:var(--forest);position:relative}
+.proj.feat .proj-h::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--green-br)}
+.proj.feat .proj-h .m{color:#93A996}
+.proj.feat .pill{border-color:rgba(201,220,207,.4);color:#E9F0EA}
+.proj.feat .pill.live{border-color:var(--green-br);color:var(--green-br)}
+
+/* ── info ─────────────────────────────────── */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,50px)}
+@media(max-width:900px){.info{grid-template-columns:1fr}}
+.info .lead{font-size:clamp(18px,2.2vw,28px);font-weight:600;letter-spacing:-.025em;line-height:1.22;margin-bottom:18px}
+.info .lead b{color:var(--green);font-weight:600}
+.info p{font-size:14.5px;line-height:1.65;margin-bottom:12px;max-width:52ch;color:#21231F}
+.info mark{background:rgba(37,107,65,.14);color:var(--green);padding:0 3px}
+.cv>div{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;transition:border-color .25s}
+.cv>div:hover{border-color:var(--green)}
+.cv span{font-family:var(--fm);font-size:10px;color:var(--green);padding-top:3px}
+.cv b{font-weight:600;display:block}
+.cv i{font-style:normal;color:var(--dim);font-size:12px;display:block;margin-top:3px;line-height:1.45}
+
+/* ── contact: full-bleed forest ───────────── */
+footer{
+  background:var(--forest);color:#E9F0EA;
+  margin:clamp(50px,10vh,120px) calc(-1 * clamp(16px,3vw,52px)) 0;
+  padding:clamp(34px,7vh,80px) clamp(16px,3vw,52px) 26px;
+  position:relative;overflow:hidden;
+}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--green-br)}
+footer::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.28;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+footer>*{position:relative;z-index:1}
+footer .m{color:#93A996}
+footer h2{font-size:clamp(26px,5.4vw,72px);font-weight:700;letter-spacing:-.04em;line-height:1;max-width:16ch}
+footer h2 em{font-style:normal;color:var(--green-br)}
+/* fixed at four so the seven items land 4 + 3, profiles then practicalities.
+   auto-fit gave six columns and left the CV orphaned on a row of its own. */
+.clist{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(24px,5vh,50px);padding-top:16px;border-top:1px solid rgba(201,220,207,.25)}
+@media(max-width:760px){.clist{grid-template-columns:repeat(2,1fr)}}
+.clist b{display:block;font-size:14.5px;font-weight:600;margin-top:5px}
+.clist a{border-bottom:1px solid rgba(201,220,207,.3);transition:color .2s,border-color .2s}
+.clist a:hover{color:var(--green-br);border-color:var(--green-br)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="rail">
+    <div>
+      <div class="name">Faye<br>Papadopoulos</div>
+      <div class="m" style="margin-top:12px">Graphic Designer<br>Berlin, DE</div>
+    </div>
+    <div class="avail">
+      <div class="status"><i></i> Open to roles</div>
+      <!-- TARGETING 1/4 · music and film variant: Music or film, ideally.<br>Also design and marketing.<br>Full-time or part-time. -->
+      <div class="m" style="margin-top:8px;text-transform:none;font-size:10px;line-height:1.5">Design · marketing.<br>Full-time or part-time.<br>Remote, or in person in Berlin.</div>
+    </div>
+    <nav>
+      <a href="#work">01 / Work</a>
+      <a href="#film">02 / Film &amp; photo</a>
+      <a href="#info">03 / Info</a>
+      <a href="#contact">04 / Contact</a>
+      <a href="faye-papadopoulos-resume.pdf">05 / CV ↗</a>
+      <a href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">06 / LinkedIn ↗</a>
+    </nav>
+  </aside>
+
+  <div class="col">
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="m">Graphic Designer since 2021 · Berlin, DE</span>
+            <span class="chip"><i></i>Open to roles</span>
+            <span class="chip eu">EU citizen · no visa needed</span>
+          </div>
+          <h1>I design brand systems and I <em>keep running them</em> after they launch.</h1>
+          <p class="sub">Identity, editorial, packaging and social, drawn and specified. I run <b>by Faye</b>, my own studio, and design social media for US real estate agents. I did the founding identity for <b>NOIL</b>, a new media platform, and I design for <b>Greasy Fingers</b> in Kreuzberg. I also shoot photography, and I write and cut short films.</p>
+          <div class="cta">
+            <a class="btn solid" href="mailto:fayepapadop@gmail.com">Email me →</a>
+            <a class="btn ghost" href="faye-papadopoulos-resume.pdf">Download CV ↗</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <figure class="portrait">
+          <img src="faye-headshot.jpg" alt="Faye Papadopoulos" width="683" height="1024" decoding="async">
+          <figcaption>
+            <b>Faye Papadopoulos</b>
+            <span class="m">Graphic Designer<br>Berlin, DE</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="facts">
+        <div><span class="m">Now</span><b>Founder &amp; designer, by Faye</b><i>My own studio · Berlin, clients in the US</i></div>
+        <div><span class="m">Right to work</span><b>EU citizen</b><i>No visa or sponsorship needed</i></div>
+        <div><span class="m">Education</span><b>BA (Hons) Graphic Design</b><i>Florence Institute of Design, 2024</i></div>
+        <!-- TARGETING 2/4 · music and film variant: <b>Design for music or film</b><i>Remote preferred · or in person in Berlin</i> -->
+        <div><span class="m">Looking for</span><b>A full-time or part-time role</b><i>Remote preferred · or in person in Berlin</i></div>
+        <div><span class="m">Languages</span><b>English &amp; Spanish, fluent</b><i>German B1, in intensive courses</i></div>
+        <div><span class="m">Tools</span><b>Adobe Suite · InDesign · Illustrator · Photoshop · After Effects · Figma · Procreate · Notion · Microsoft Office</b></div>
+      </div>
+    </section>
+
+    <section class="sec" id="work">
+      <div class="sec-h"><h2><span class="br"></span>01 / Selected work</h2><span class="m">08 projects</span></div>
+
+      <!-- FEATURED: own studio -->
+      <article class="proj feat">
+        <div class="proj-h">
+          <span class="m">01</span>
+          <div><h3>by Faye — my studio</h3><div class="m">Studio brand + client work · Berlin, working with the US · 2026 — ongoing</div></div>
+          <span class="pill live">● Live &amp; running</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p><b>by Faye</b> is my studio. I design and run social media for real estate agents in the US, and I do it from Berlin.</p>
+            <p>What I am competing with is a Canva flyer, because most agent feeds are crowded template graphics. So the brand is built to be the opposite of one. Fraunces set large on blush and plum with a rose accent, Jost underneath it, one idea per frame and enough room around it to read like a magazine page. I stayed off the navy and grey that every real estate brand uses, because I am selling design to agents rather than houses to buyers.</p>
+            <p>An agent decides whether to hire me by looking at my feed, which makes the account the portfolio. It had to be finished and running before I asked anyone to pay for it.</p>
+          </div>
+          <div>
+            <p>My first client is <b>Elias Papadopoulos</b>, a RE/MAX broker who has been selling in Greater Boston since 1985 and had almost nothing online. I did the market audit and the audience research, and I built his brand kit, his landing page and his lead capture. Posts and captions are produced inside that system with AI, and I direct it and edit what comes back. <mark>I keep the calendar, I post everything to his account myself, and I only take a post to him when I am unsure of a real estate detail.</mark></p>
+            <p>The blue and the red are RE/MAX’s own colours, and he is a RE/MAX broker who likes the classic version of it. So the palette came with the franchise and I built the rest around it: a hard grid, and type that reads the same way on a sold post as it does on a neighbourhood guide. That is the opposite of my own brand, where nothing was fixed and every choice was mine to argue for. He has forty years of credibility and it had to survive being looked at on a phone.</p>
+          </div>
+          <div class="kv">
+            <div><span>Role</span><div>Founder · designer · strategist · copywriter</div></div>
+            <div><span>Studio</span><div>Identity, brand kit, template system, voice &amp; tone, service design, site</div></div>
+            <div><span>Client</span><div>Brand kit, post and carousel system, stories, highlights, landing page, PDF guide, launch email</div></div>
+            <div><span>Live</span><div><a href="https://byfayesocial.com" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line)">byfayesocial.com ↗</a><br><a href="https://talktoelias.com" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line)">talktoelias.com ↗</a></div></div>
+            <div><span>Status</span><div>Studio live; first client launched from zero and retained</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The studio brand</b> — Fraunces on blush and plum, one idea per frame</figcaption>
+          <div class="proj-img n4">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/bts-meet-the-designer/design.png" alt="by Faye — behind the brand"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/intro-meet-faye/design.png" alt="by Faye — introduction post"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/tips-12-post-ideas/slide-1.png" alt="by Faye — 12 things to post that aren’t a listing, the cover of the content ideas carousel"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/basics-04-starter-kit/slide-1.png" alt="by Faye — Basics carousel"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>The client</b> — Elias Papadopoulos, RE/MAX broker, Greater Boston</figcaption>
+          <div class="proj-img n4">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/sold-post.png" alt="Elias — asked $799,000, sold for $890,000"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/neighbourhood-guide.png" alt="Elias — the Roslindale neighbourhood guide carousel"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/buyer-checklist.png" alt="Elias — the first-time buyer checklist carousel"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/client-review.png" alt="Elias — a client review, five stars"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>The landing pages</b> — I built and shipped both, and both are live</figcaption>
+          <div class="proj-img n2 sites">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/site-byfaye-2.jpg" alt="byfayesocial.com — why a feed decides the listing, in three cards"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/site-elias.jpg" alt="talktoelias.com — the client site, where call and text are the only two actions"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">02</span>
+          <div><h3>NOIL</h3><div class="m">Founding identity &amp; brand manual · Italy · 2025 —</div></div>
+          <span class="pill">Lead designer</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p>NOIL stands for <b>No One is Listening</b>. It is a new media platform that connects people across cultures through voice, and it works in three places: on the page, on the screen, and in the world. The events so far, a Night of Authentic Voice, a run of Power of Listening workshops, and a live reading of the founder’s memoir essay, have drawn <mark>50+ people from 5+ countries</mark>.</p>
+            <p>The primary logo is the full name typed out and then struck through with a single blue line. The name is the problem the platform exists to solve, so crossing it out is the argument. Two stacked NOIL marks handle tight spaces, each drawn in print black and in paper white, and the manual is explicit that the short mark never stands in for the long one unless the space demands it.</p>
+          </div>
+          <div>
+            <p>Three typefaces carry the whole thing. F25 Executive is held back for the logo and for headings that belong to NOIL, Franklin Gothic Book does the body because it reads as a human voice rather than a house style, and Libre Bodoni takes the quotations. Under that sits one rule about contrast: anything typed can be answered by something drawn. Headings get underlined with a hand stroke, and the lettering runs across the covers and the article layouts.</p>
+            <p>The palette is paper white, print black and a sky blue, with blush pink and golden yellow behind them, chosen to read as curiosity and openness rather than authority. NOIL wanted bright colour as resistance to what I call the greige takeover of design. <mark>I wrote and designed the whole manual</mark>, and since NOIL has no designer in house it had to settle questions I would not be there for. Arianna Bambagioni worked with me on some of the design components.</p>
+          </div>
+          <div class="kv">
+            <div><span>Client</span><div>NOIL (No One is Listening), a new media platform</div></div>
+            <div><span>Reach</span><div>50+ people from 5+ countries across three events</div></div>
+            <div><span>Type</span><div>F25 Executive, Franklin Gothic Book, Libre Bodoni</div></div>
+            <div><span>Palette</span><div>Paper white, print black, sky blue; blush pink and golden yellow behind them</div></div>
+            <div><span>Role</span><div>Lead designer · wrote and designed the brand manual</div></div>
+            <div><span>With</span><div>Arianna Bambagioni on some design components</div></div>
+            <div><span>Shipped</span><div>Logo and variations, brand manual, lettering, article templates, digital assets</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The manual</b> — logo variations, audience, imagery rules and the article template</figcaption>
+          <div class="proj-img n4 a4">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/03brand-manual-page-09.png" alt="NOIL — logo and variations in print black and paper white"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/03brand-manual-page-06.png" alt="NOIL — target audience and event reach"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/03brand-manual-page-16.png" alt="NOIL — imagery rules"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/03brand-manual-page-15.png" alt="NOIL — article layout template"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Lettering and application</b> — the hand-lettered name, and the identity on mobile</figcaption>
+          <div class="proj-img n2 wide">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/asset-58-4x.png" alt="NOIL — hand-lettered No One is Listening collage"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/noil/phone-00002.png" alt="NOIL — identity applied on mobile"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">03</span>
+          <div><h3>Lumina Bio Cosmetics</h3><div class="m">University brief · rebrand for Relax Firenze · Florence · 2023</div></div>
+          <span class="pill">University project</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p>Relax Firenze is a wellness centre in the middle of Florence with a skincare line under the same name. It sold in person, by word of mouth, mostly to women over 35. Five product lines were told apart by small symbols on identical glass bottles, so from across a shop the whole range looked like one product. The brief was to rebrand it, widen the age range, reach men, and put sustainability ahead of everything else.</p>
+            <p>The five lines already existed, under names that did not say what any of them were for: Pura, Donnaluna, Orobianco, Corpo d’Amore and Lui. I named the brand <b>Lumina</b>, from the Latin for light: <i>lume</i> in Italian, <i>luminosa</i> in Spanish, luminous in English, and in Arabic, of the glowing light of the moon. Then I renamed the lines after things in the sky, <b>Celeste, Luna, Sol, Stelle and Eclipse</b>, and each one keeps what it was originally for. <mark>Every one of them either gives light or is lit by it, so the range finally has one idea holding it together.</mark></p>
+            <p>The mark is that word inside a circle, and the horizontal bar of the L is a golden light that cuts across and completes the word. I drew the circle uneven so it reads as water and movement instead of as a perfect ring. Type is Josefin Sans in three weights with Cherolina on the logo, and neither face is perfectly symmetrical, which is the same decision as the circle.</p>
+          </div>
+          <div>
+            <p>Each line got a colour and an age. Celeste is the palest blue and sells to women 18 to 30, Sol is for men over 25, and Eclipse is a deep oxblood for anyone over 35, which is where the brief to widen the range and reach men actually gets answered. The colours come out of the wellness centre’s own vocabulary rather than out of cosmetics, so blue is there because the body is mostly water, green for the earth, oxblood for maturity, gold for the elixir of life. Running through every label is one stroke of white gold, <b>#eede76</b>, and it is the only thing all five share, which is what makes the shelf read as one house.</p>
+            <p>Sustainability had to be visible rather than claimed. The boxes are 100% plantable paper printed on the inside as well as the outside, so the panel carrying the ingredient copy can go in the ground once the bottle is open. The two faces do different jobs: the outside argues the case for buying sustainable skincare at all, and the inside is ingredients and hand-drawn botanicals. Bottles and jars are Estal’s Magister line in 100% recycled glass, and customers bring the empties back to the centre to be refilled. Bottles get a wooden dropper, jars get a white cap, and the cotton bag carries the logo small on the side so people will use it for other things.</p>
+          </div>
+          <div class="kv">
+            <div><span>Brief</span><div>University brief: rebrand Relax Firenze, widen the age range, reach men, sustainability first</div></div>
+            <div><span>Renamed</span><div>Pura, Donnaluna, Orobianco, Corpo d’Amore and Lui became Celeste, Luna, Eclipse, Stelle and Sol</div></div>
+            <div><span>Who each is for</span><div>Celeste women 18–30 · Luna women 31–70 · Sol men 25+ · Stelle women 25+ · Eclipse 35+, men and women</div></div>
+            <div><span>Palette</span><div>Five line colours, #b1c5de through #4a1311, plus white gold #eede76 kept for the light detailing</div></div>
+            <div><span>Type</span><div>Josefin Sans in Thin, Extra Light and Light. Cherolina for the logo and for “Naturally made in Italy”</div></div>
+            <div><span>Manual rules</span><div>Clearance at a quarter of the circle. Logo from 20 mm to 106 mm. No black logo on anything darker than the Celeste blue. Box copy scientific, six sentences maximum</div></div>
+            <div><span>Materials</span><div>Estal Magister recycled glass, plantable paper, wooden dropper, white jar cap, cotton bag</div></div>
+            <div><span>Shipped</span><div>Identity, brand manual, packaging, labels, the PLANT ME brochure, social, a promotion plan and a costing down to the €299 Cherolina licence</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The manual</b> — the mark, its inversion, and the botanicals I drew for the packaging</figcaption>
+          <div class="proj-img n2 spread">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/lumina-brand-manual-page-09.jpg" alt="Lumina — logo and inverted logo, brand manual"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/lumina-brand-manual-page-25.jpg" alt="Lumina — hand-drawn botanical illustrations, brand manual"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>The five lines</b> — the sub-brand moodboards from the manual: Celeste, Luna and Sol, Stelle and Eclipse, each with its audience and its focus</figcaption>
+          <div class="proj-img n3 spread">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/lumina-brand-manual-page-05.jpg" alt="Lumina — the Celeste moodboard, women 18 to 30"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/lumina-brand-manual-page-06.jpg" alt="Lumina — the Luna and Sol moodboards, women 31 to 70 and men 25 and over"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/lumina-brand-manual-page-07.jpg" alt="Lumina — the Stelle and Eclipse moodboards, women 25 and over, and 35 and over"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Packaging</b> — the Eclipse bottle, the Celeste box, and the box flat, printed both sides on plantable paper</figcaption>
+          <div class="proj-img n3 sq">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/eclipse-bottle-100ml.jpg" alt="Lumina — Eclipse 100 ml bottle with wooden dropper"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/celeste-box.jpg" alt="Lumina — Celeste Purifying Tonic box"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/celeste-box-dieline.jpg" alt="Lumina — Celeste box flat, printed inside and out on plantable paper"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>In use</b> — the brochure and the social templates</figcaption>
+          <div class="proj-img n2 r32">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/brochure-mockup.jpg" alt="Lumina — brochure"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/lumina/2-phones.jpg" alt="Lumina — social templates on mobile"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">04</span>
+          <div><h3>Greasy Fingers</h3><div class="m">Wordmark, identity &amp; membership · Berlin · 2026 · on hold</div></div>
+          <span class="pill">Designer</span>
+        </div>
+        <div class="proj-b">
+          <div class="proj-txt">
+            <p>Greasy Fingers is a bike shop and bar on Dresdener Straße in Kreuzberg. A workshop in the daytime, a bar at night. I’m their designer.</p>
+            <p>The <b>Kiez Mitglied</b> card had to cover both halves of that business on one piece of plastic: unlimited minor repairs, 20% off drinks, 10% off parts and gear. I drew the wordmark by hand, closer to a painted shop sign than a typeface, and set it on a violet that reads one way under workshop lights and another way after dark.</p>
+            <p><mark>The rest is on hold.</mark> Greasy Fingers paused the build while they raise more funding, so the design stopped where the project stopped. The card is what shipped.</p>
+            <div class="kv">
+              <div><span>Shipped</span><div>Wordmark, palette, Kiez Mitglied membership card</div></div>
+              <div><span>Status</span><div>Paused with the project, pending further funding</div></div>
+            </div>
+          </div>
+          <div class="proj-img mixed">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" style="aspect-ratio:7126/2011" src="membership-card-3x.png" alt="Greasy Fingers — Kiez Mitglied card, both sides"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" style="aspect-ratio:725/581" src="kiez-card.jpg" alt="Greasy Fingers — Kiez Mitglied card in the hand"></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">05</span>
+          <div><h3>Guerillas</h3><div class="m">BA design research thesis · textbook, app &amp; AR · Florence, 2024</div></div>
+          <span class="pill">Thesis project</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p><b>Guerillas</b> was my BA design research thesis at the Florence Institute of Design International. The question was whether deconstructivist design can teach critical analysis, and the only honest way to answer it was to build the thing, so I made a printed history textbook for teenagers and an app that reads it.</p>
+            <p>What I was arguing against is <i>The American Pageant</i>, one of the most used US history textbooks there is. Long hyphenated paragraphs, tidy graphs, and authors students are never asked to name. Swiss principles, simplicity and a neutral voice and a strict grid, get read as objectivity, which is the last thing a history book should be claiming. <mark>The student hands control to the text instead of arguing with it.</mark></p>
+          </div>
+          <div>
+            <p>So the book argues back. Body text is Candara at 14 and 20 point, and the size shifts to mark what matters and to leave a reader checkpoints to stop at. Display type is a set of punk faces: Carton, Stampede, Heavitas, gutter vomit, and a copperplate called US Declaration. Chapter openers are collage. On the Wyoming suffrage spread the word <b>WHY?</b> is set over and over in a smudged typewriter face, and the repetitions are arranged into question marks that run down the gutter. Every article is signed, down to the university or publication the writer came from, so a student can go and doubt them. That is the skill the book exists to teach.</p>
+            <p>The app carries the same system onto a screen, across four tabs: home, library, scan and community. There is an audio option so the text can be listened to instead of read. Scan opens the AR layer, built in partnership with <b>Artivive</b>, so a page in the printed book animates when a phone is held over it. I specified all of it for build, with type sizes, weights, hex values and image dimensions on every screen.</p>
+          </div>
+          <div class="kv">
+            <div><span>Brief</span><div>Self-directed BA (Hons) design research thesis, Spring 2024</div></div>
+            <div><span>Question</span><div>Can deconstructivist design teach critical analysis in history?</div></div>
+            <div><span>Grounding</span><div>Derrida, <i>Of Grammatology</i> (1967); Ellen Lupton on deconstruction and graphic design</div></div>
+            <div><span>Audience</span><div>Pre-teens and teenagers, US school history</div></div>
+            <div><span>Type</span><div>Candara for body; Carton, Stampede, Heavitas, US Declaration for display; Argent Pixel in the app</div></div>
+            <div><span>Shipped</span><div>Textbook, brand manual, app UI &amp; spec deck, AR layer, identity, merch</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The manual</b> — five layout types, each with its own rules, then one of them specified in full</figcaption>
+          <div class="proj-img n2 spread">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/manual-layouts.jpg" alt="Guerillas — the five layout types: chapter introduction, chapter body, documents, connect activity and break"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/manual-layout-spec.jpg" alt="Guerillas — layout specification on the Wyoming suffrage spread, with the repeated WHY? set into question marks"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>The printed book</b> — primary sources tipped in as facsimiles you can lift and handle</figcaption>
+          <div class="proj-img n3 r43">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/img-5999.jpg" alt="Guerillas — 19th Amendment spread with tipped-in facsimiles"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/img-6009.jpg" alt="Guerillas — protest photography spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/img-5975.jpg" alt="Guerillas — badges and tote"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>The app and the AR</b> — specified for build, with an audio reader and a scan tab that animates the printed page</figcaption>
+          <div class="proj-img n2 r169 vids">
+            <video class="vid lead" controls preload="metadata" playsinline
+              src="updated-portfolio/guerillas/scan-me-1.mp4"
+              aria-label="Scanning a printed Guerillas spread with the app, and the AR layer animating over it. Music only, no speech."></video>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/presentation-and-bm-page-056.jpg" alt="Guerillas — community group screen, specified for build"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/guerillas/presentation-and-bm-page-059.jpg" alt="Guerillas — in-app textbook reader with the audio listening option"></button>
+
+          </div>
+        </figure>
+
+        <figure class="run wsheet">
+          <figcaption><b>On one sheet</b> — the book, the app, the AR and the campaign together</figcaption>
+          <div class="proj-img sheet" style="grid-template-columns:1fr">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="thesis-pic.jpg" alt="Guerillas — project sheet: Little Rock Nine and SNCC spreads, the app, the AR in use, the printed cover, and the campaign illustrations"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">06</span>
+          <div><h3>La Dolce Vita</h3><div class="m">University brief · illustrated guidebook · Florence · 2022</div></div>
+          <span class="pill">Wrote it, drew it, set it</span>
+        </div>
+        <div class="proj-b">
+          <div class="proj-txt">
+            <p><i>La Dolce Vita</i> is a guide to slow living in Florence. I took the Italian idea of the same name, researched what it actually looks like in the city day to day, and wrote the guidebook.</p>
+            <p>The chapters cover museums, restaurants, nature, walking and home, and there’s a page of Italian phrases worth knowing before you get there. Every illustration is drawn in Procreate. I set the book in InDesign.</p>
+            <p>The set brief was a guide to Florence. Choosing slow living as the subject is what put a chapter on walking and a chapter on home into a guidebook.</p>
+            <div class="kv">
+              <div><span>Role</span><div>Research, writing, illustration, editorial design</div></div>
+              <div><span>Shipped</span><div>A complete guidebook, covers to print</div></div>
+            </div>
+          </div>
+          <div class="proj-img n3 wide">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/cd-elements/presentation-dolce-vita-page-06.jpg" alt="La Dolce Vita — Museums spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/cd-elements/presentation-dolce-vita-page-07.jpg" alt="La Dolce Vita — Nature spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/cd-elements/presentation-dolce-vita-page-08.jpg" alt="La Dolce Vita — Restaurants spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/cd-elements/presentation-dolce-vita-page-09.jpg" alt="La Dolce Vita — Walking spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/cd-elements/presentation-dolce-vita-page-11.jpg" alt="La Dolce Vita — Home spread"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/faye-site/pages/page-26.jpg" alt="La Dolce Vita — front and back covers"></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">07</span>
+          <div><h3>GRRRL RUIN</h3><div class="m">Music design · wordmark and posters for my own band project</div></div>
+          <span class="pill">Music design</span>
+        </div>
+        <div class="feat-top">
+          <div>
+            <p>GRRRL RUIN is the music I write and play, and I design it as well. The wordmark is cut from magazine letters. I moved them around by hand until the line sat right, so the tilt and drop of every letter is where I physically put it.</p>
+          </div>
+          <div>
+            <p>The poster is a recruitment ad, because I needed three or four musicians. I wrote it in the register the ad belongs to instead of the one a design portfolio reaches for, and built the page as a collage of newspaper clippings, old personal ads and a punk documentary sheet. The wordmark breaks in half and pins the two opposite corners.</p>
+            <p>Designing for music is the work I would most like to be paid for.</p>
+          </div>
+          <div class="kv">
+            <div><span>Project</span><div>My own band · <a href="https://www.youtube.com/@grrrlruin" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line)">@grrrlruin ↗</a></div></div>
+            <div><span>Role</span><div>Lettering, collage, layout and the copy</div></div>
+            <div><span>Wordmark</span><div>Cut from magazines by hand, then digitised</div></div>
+            <div><span>Posters</span><div>Two A4: the recruitment page, written and set to read as a classified ad, and the gig poster for Herman Schultz</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The wordmark</b> — the finished lockup, cut from magazine letters and digitised</figcaption>
+          <div class="proj-img one">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" style="aspect-ratio:1703/406;object-fit:contain;background:#F4F4EE;padding:4% 7%" src="updated-portfolio/misc/grrrl-ruin-3x.png" alt="GRRRL RUIN — the wordmark, cut from magazine letters and digitised"></button>
+          </div>
+        </figure>
+
+        <figure class="run wposter2">
+          <figcaption><b>The posters</b> — the ad I ran to find the rest of the band, and the poster for the acoustic show at Herman Schultz in Berlin</figcaption>
+          <div class="proj-img n2">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" style="aspect-ratio:1200/1697" src="updated-portfolio/misc/grrrl-ruin-poster.jpg" alt="GRRRL RUIN — recruitment poster, collaged from clippings and personal ads"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" style="aspect-ratio:2480/3508" src="herman-schultz-poster-fin.jpg" alt="GRRRL RUIN — gig poster for the acoustic show at Herman Schultz, Berlin, in a purple duotone"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">08</span>
+          <div><h3>Realtop Marketing</h3><div class="m">Social campaigns for agency clients · Boston, MA · 2023</div></div>
+          <span class="pill">Graphic design intern</span>
+        </div>
+        <div class="proj-b">
+          <div class="proj-txt">
+            <p>Realtop is a marketing agency in Boston, and I was their graphic design intern in 2023. I made social posts for the clients on their roster. The four here are Atlantic Coast Title, KeyCredit Repair, Poli Mortgage and Prime Healthcare.</p>
+            <p><mark>I worked inside identities that already existed, under the agency’s head graphic designer.</mark> Every client arrived with a brand and a set of layouts already built, and the copy came to me written. What I chose was the photograph, how it was cropped, and where the type sat once the supplied line ran longer than the one before it.</p>
+            <p>The four brands have nothing in common. Atlantic Coast is navy and cyan under condensed italic caps, KeyCredit is a rounded sans that turns into a brush script for a holiday post, Poli splits the frame on a diagonal in two greens, and Prime Healthcare is a high-contrast serif over a white footer. Everywhere else on this page I am the one setting the rules, and here somebody else set them. I can work either way.</p>
+            <div class="kv">
+              <div><span>Mine</span><div>Image choice, cropping, and fitting type into layouts that were already set</div></div>
+              <div><span>Not mine</span><div>The brand identities, the layouts and the copy</div></div>
+            </div>
+          </div>
+          <div class="proj-img n2 sq">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/realtop/25.jpg" alt="Realtop — Atlantic Coast Title, a post set in the client’s navy and cyan"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/realtop/6.jpg" alt="Realtop — KeyCredit Repair, a tip post in the client’s rounded sans"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/realtop/4-1.jpg" alt="Realtop — Poli Mortgage, a budgeting post on the client’s diagonal split"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/realtop/34.jpg" alt="Realtop — Prime Healthcare, a post in the client’s serif"></button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="sec" id="film">
+      <div class="sec-h"><h2><span class="br"></span>02 / Film &amp; photography</h2><span class="m">Film · photography</span></div>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">09</span>
+          <div><h3>Three short films</h3><div class="m">University coursework · written, directed, shot and edited · Florence, 2023</div></div>
+          <span class="pill">Wrote, shot, cut</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p>Videography was my favourite class at university, and these are the three short films I made for it in Florence. I wrote each one, directed it, shot it and edited it.</p>
+            <p><b>Lovesick</b> is the longest at 12:42, and the most abstract of the three. It was shot in one room, and I handwrote every letter that appears in it. The whole thing cost <mark>under thirty euro</mark>. The actress carries the film. I edited the music as well.</p>
+          </div>
+          <div>
+            <p><b>Per Sempre</b> runs 8:56. I wrote the script in English and then translated it into Italian, because the performance was more honest in the language it was being acted in. The actors took the translated script and made it sound like their own words. The English runs underneath in yellow, which is the old cinema convention, and it has to stay readable on a dark frame without taking over the shot.</p>
+            <p><b>Pose</b> is a conceptual film about self-voyeurism, and at 4:08 it is the shortest of the three. I composed the music for this one.</p>
+          </div>
+          <div class="kv">
+            <div><span>Brief</span><div>University coursework · Florence, 2023</div></div>
+            <div><span>Role</span><div>Writing, directing, camera, editing, and the music on <i>Pose</i></div></div>
+            <div><span>Lovesick</span><div>12:42 · one room, every letter handwritten, under €30</div></div>
+            <div><span>Per Sempre</span><div>8:56 · written in English, performed in Italian, yellow subtitles</div></div>
+            <div><span>Pose</span><div>4:08 · conceptual, on self-voyeurism · music composed by me</div></div>
+            <div><span>Included</span><div>Locations, props, wardrobe, titles and sound</div></div>
+            <div><span>Watch</span><div>All three play on this page, and on <a href="https://www.youtube.com/@grrrlruin" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line)">@grrrlruin ↗</a></div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>The films</b> — click a poster to play it here</figcaption>
+          <div class="proj-img n3 r169">
+            <button class="sh play" type="button" data-yt="yKsq7uW8D3I" data-cap="Lovesick · 12:42 · written, directed, shot and edited">
+              <img loading="lazy" decoding="async" src="updated-portfolio/film/lovesick-01.jpg" alt="Lovesick — poster frame">
+              <span class="pl">▶</span><span class="rt">Lovesick · 12:42</span>
+            </button>
+            <button class="sh play" type="button" data-yt="ymy2QitLZ0k" data-cap="Per Sempre · 8:56 · written in English, performed in Italian, English subtitles">
+              <img loading="lazy" decoding="async" src="updated-portfolio/film/persempre-01.jpg" alt="Per Sempre — poster frame">
+              <span class="pl">▶</span><span class="rt">Per Sempre · 8:56</span>
+            </button>
+            <button class="sh play" type="button" data-yt="SRyRd9FQLA4" data-cap="Pose · 4:08 · written, directed, shot and edited">
+              <img loading="lazy" decoding="async" src="updated-portfolio/film/pose-02.jpg" alt="Pose — poster frame">
+              <span class="pl">▶</span><span class="rt">Pose · 4:08</span>
+            </button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Stills</b> — one film per column: Lovesick, Per Sempre, Pose</figcaption>
+          <div class="proj-img n3 r169 bycol">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/lovesick-05.jpg" alt="Lovesick — writing on the bed under a wall lamp"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/lovesick-02.jpg" alt="Lovesick — one of the handwritten letters"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/persempre-02.jpg" alt="Per Sempre — interior, with the English subtitle under the frame"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/persempre-03.jpg" alt="Per Sempre — two actors, shot from above"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/pose-01.jpg" alt="Pose — at the dresser, her reflection in the mirror behind her"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/pose-03.jpg" alt="Pose — at the table, shot flat against a bare wall"></button>
+          </div>
+        </figure>
+      </article>
+
+      <article class="proj">
+        <div class="proj-h">
+          <span class="m">10</span>
+          <div><h3>Photography</h3><div class="m">Directed, street and live music · plus <i>Languages</i>, a photo book</div></div>
+          <span class="pill">Shot, selected, sequenced</span>
+        </div>
+
+        <div class="feat-top">
+          <div>
+            <p>I have shot in every mode I could get to, and the one I keep coming back to is directed and conceptual work. I light it and style it first, then I work with the person in front of the camera until the picture is actually there.</p>
+            <p>Street asks the opposite of me. I have to be ready and then not hesitate, because the man with the pipe and the woman outside the market each lasted about two seconds. I like shooting concerts too. The light there belongs to somebody else and it changes on every song, so most of that work happens in what I keep afterwards.</p>
+          </div>
+          <div>
+            <p><b>Languages</b> is a photo series about the human body as a reflection of nature. I built it as a book rather than a set of prints, because the argument is in the pairing. A mouth is followed by a seed pod that has the same seam, and hair by grass that falls the same way.</p>
+            <p>Handwritten pages run between the photographs. The sequencing tells the story as much as the pictures do, so the order of the pages took longer to settle than any single frame took to shoot.</p>
+          </div>
+          <div class="kv">
+            <div><span>Modes</span><div>Directed, street and live music</div></div>
+            <div><span>Series</span><div><i>Languages</i> · a photo book pairing the human body with natural forms</div></div>
+            <div><span>Role</span><div>Shooting, selection, sequencing and the book layout</div></div>
+            <div><span>Live</span><div>Tenderheds at The Lansdowne, May 2024</div></div>
+            <div><span>Street</span><div>Available light, no setup</div></div>
+          </div>
+        </div>
+
+        <figure class="run">
+          <figcaption><b>Directed</b> — everything here was set up and lit</figcaption>
+          <div class="proj-img n4 r32">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-dir-01.jpg" alt="Directed portrait — a stone and silver collar"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-dir-04.jpg" alt="Directed portrait — a strand of pearls held in the mouth, on a grey backdrop"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-dir-02.jpg" alt="Directed portrait — window light"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-dir-05.jpg" alt="Directed — two girls eating cake on a bed, lit and styled"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Street</b> — four frames, all in available light</figcaption>
+          <div class="proj-img n4 r32">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-street-01.jpg" alt="Street — a man smoking a pipe"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-street-02.jpg" alt="Street — a woman outside a market at night"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-street-03.jpg" alt="Street — a fruit stall and its price signs"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-street-05.jpg" alt="Street — a hand holding a cigarette, in a bar at night"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Live music</b> — Tenderheds at The Lansdowne, May 2024</figcaption>
+          <div class="proj-img n4 r32">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-band-01.jpg" alt="Tenderheds — the singer at the microphone, face under a cap, a stage lamp behind him"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-band-02.jpg" alt="Tenderheds — the singer mid-vocal, eyes closed"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-band-03.jpg" alt="Tenderheds — the drummer in green light under the venue sign"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-band-04.jpg" alt="Tenderheds — a bass and the player’s hands, in violet light"></button>
+          </div>
+        </figure>
+
+        <figure class="run">
+          <figcaption><b>Languages</b> — conceptual photography. We are one and the same.</figcaption>
+          <div class="proj-img n4 book">
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-lang-01.jpg" alt="Languages — a mouth"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-lang-02.jpg" alt="Languages — a seed pod with the same seam"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-lang-03.jpg" alt="Languages — hair"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/film/photo-lang-04.jpg" alt="Languages — grass with the same fall"></button>
+          </div>
+        </figure>
+      </article>
+
+    </section>
+
+    <section class="sec" id="info">
+      <div class="sec-h"><h2><span class="br"></span>03 / Info</h2><span class="m">Berlin, DE</span></div>
+      <div class="info">
+        <div>
+          <p class="lead">I live in Berlin. I make brand systems and then I <b>keep running them.</b></p>
+          <p>I have a BA (Hons) in Graphic Design from the Florence Institute of Design. I run by Faye, my own studio, with clients in the US. I did the founding identity for NOIL, a new media platform in Italy, and I’m the designer for Greasy Fingers here in Berlin.</p>
+          <p>My parents are Greek and Mexican and I grew up switching languages at home, so I got early practice at saying one thing three ways and keeping it intact. That is the skill I use on brand systems, where a mark, a headline and a caption all have to <mark>hold the same idea in different formats</mark>. I speak English and Spanish fluently, I’m at B1 in German and taking intensive courses.</p>
+          <!-- TARGETING 3/4 · music and film variant, last sentence of the paragraph below:
+               What I want most is to <mark>design for music or film</mark>, and I already do it for my own band. -->
+          <p>I also write, direct, shoot and edit short films, and I shoot street, directed and product photography. It is the same job as the design work in a different medium, and it means I can <mark>shoot and cut something as well as design it</mark>. On my own films I do all of it, from the script to the final cut, which is why a design job that also needs a camera is one I can take.</p>
+          <p class="m" style="margin-top:16px">What I can take on</p>
+          <p>Graphic design and art direction. Brand and campaign work. Photography and short-form video, which I can shoot and edit myself. Identity and campaign work for music and film. Marketing, content strategy and copywriting. Social media management. I’ve also done reception, scheduling and bookkeeping alongside design jobs.</p>
+          <p class="m" style="margin-top:16px">Tools</p>
+          <p>InDesign · Illustrator · Photoshop · After Effects · Figma · AI tooling · print production · brand systems · illustration · photography · content strategy</p>
+        </div>
+        <div class="cv">
+          <div><span>2026 —</span><b>Founder &amp; Designer<i>by Faye · Berlin, clients in the US</i></b></div>
+          <div><span>2026 —</span><b>Lead Graphic Designer<i>Handlebar / Greasy Fingers · Berlin</i></b></div>
+          <div><span>2025 —</span><b>Lead Graphic Designer<i>NOIL · Italy (remote)</i></b></div>
+          <div><span>2024–25</span><b>Graphic Designer &amp; Reception<i>Generator Alexanderplatz · Berlin</i></b></div>
+          <div><span>2023</span><b>Graphic Design Intern<i>Realtop Marketing · Boston, MA</i></b></div>
+          <div><span>2021–23</span><b>Graphic Designer &amp; Reception<i>Re/MAX Unlimited · Boston, MA</i></b></div>
+          <div><span>2021–22</span><b>Social Media Lead, volunteer<i>Lucy Parsons Center · Boston, MA</i></b></div>
+          <div><span>2024</span><b>BA (Hons) Graphic Design<i>Chester University via Florence Institute of Design</i></b></div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="m" style="margin-bottom:14px">04 / Contact</div>
+      <!-- TARGETING 4/4 · music and film variant, for when the application is one:
+           <h2>I’d most like to design for <em>music or film</em>.</h2>
+           <p …>On a music or film project I can do the identity, the posters, the photography and the video, and I have done all four on my own. I am also open to graphic design and art direction, brand and campaign work, marketing and content, social media management and studio coordination. A role in Berlin that mixes them is fine by me.</p> -->
+      <h2>Open to <em>graphic design</em> and marketing roles in Berlin.</h2>
+      <p class="m" style="margin-top:16px;text-transform:none;font-size:13px;line-height:1.6;max-width:52ch;color:#B9C7BC">Design and art direction, brand and campaign work, marketing and content, social media management and studio coordination. I shoot and cut video and stills as well. A role that mixes them is fine by me.</p>
+      <div class="clist">
+        <div><span class="m">Email</span><b><a href="mailto:fayepapadop@gmail.com">fayepapadop@gmail.com</a></b></div>
+        <div><span class="m">LinkedIn</span><b><a href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">/fayepapadopoulos ↗</a></b></div>
+        <div><span class="m">Films &amp; music</span><b><a href="https://www.youtube.com/@grrrlruin" target="_blank" rel="noopener">@grrrlruin ↗</a></b></div>
+        <div><span class="m">Writing</span><b><a href="https://substack.com/@kissingcreature" target="_blank" rel="noopener">Substack ↗</a></b></div>
+        <div><span class="m">Phone · DE</span><b><a href="tel:+4915129445053">+49 151 29445053</a></b></div>
+        <div><span class="m">Phone · US</span><b><a href="tel:+16174355357">+1 617 435 5357</a></b></div>
+        <div><span class="m">CV</span><b><a href="faye-papadopoulos-resume.pdf">Download PDF ↗</a></b></div>
+      </div>
+      <div class="m" style="margin-top:26px">Faye Papadopoulos © 2026 · Set in Familjen Grotesk &amp; JetBrains Mono</div>
+    </footer>
+
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <span class="lb-count" id="lbCount"></span>
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close viewer">✕</button>
+  <button class="lb-btn lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous image">‹</button>
+  <button class="lb-btn lb-nav lb-next" id="lbNext" type="button" aria-label="Next image">›</button>
+  <figure class="lb-fig">
+    <img id="lbImg" alt="">
+    <iframe class="lb-frame" id="lbVid" hidden title="Film" allowfullscreen
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lbImg');
+  var lbVid = document.getElementById('lbVid');
+  var lbCount = document.getElementById('lbCount');
+  var prevBtn = document.getElementById('lbPrev');
+  var nextBtn = document.getElementById('lbNext');
+
+  var group = [];      // buttons in the project currently open
+  var index = 0;
+  var opener = null;   // button to restore focus to
+
+  function stopFilm() {
+    lbVid.hidden = true;
+    lbVid.removeAttribute('src');
+  }
+
+  function show(i) {
+    index = (i + group.length) % group.length;
+    var btn = group[index];
+    var img = btn.querySelector('img');
+    var yt = btn.getAttribute('data-yt');
+    // a film poster opens the player; everything else opens the image
+    if (yt) {
+      lbImg.hidden = true;
+      lbImg.removeAttribute('src');
+      lbVid.hidden = false;
+      lbVid.src = 'https://www.youtube-nocookie.com/embed/' + yt +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    } else {
+      stopFilm();
+      lbImg.hidden = false;
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || '';
+    }
+    lbCount.textContent = (index + 1) + ' / ' + group.length;
+    var multi = group.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+  }
+
+  function open(btn) {
+    var grid = btn.closest('.proj-img');
+    group = grid ? Array.prototype.slice.call(grid.querySelectorAll('.sh')) : [btn];
+    opener = btn;
+    show(group.indexOf(btn));
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { lb.classList.add('on'); });
+    document.getElementById('lbClose').focus();
+  }
+
+  function close() {
+    stopFilm();               // synchronous, so the sound stops with the click
+    lb.classList.remove('on');
+    document.body.style.overflow = '';
+    setTimeout(function () {
+      lb.hidden = true;
+      lbImg.removeAttribute('src');
+      if (opener) { opener.focus(); opener = null; }
+    }, 200);
+  }
+
+  document.querySelectorAll('.sh').forEach(function (btn) {
+    btn.addEventListener('click', function () { open(btn); });
+  });
+
+  document.getElementById('lbClose').addEventListener('click', close);
+  prevBtn.addEventListener('click', function () { show(index - 1); });
+  nextBtn.addEventListener('click', function () { show(index + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { close(); }
+    else if (e.key === 'ArrowLeft') { show(index - 1); }
+    else if (e.key === 'ArrowRight') { show(index + 1); }
+    else if (e.key === 'Tab') {
+      // keep focus inside the dialog
+      var f = Array.prototype.slice.call(
+        lb.querySelectorAll('button:not([hidden])'));
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+})();
+</script>
+</body>
+</html>

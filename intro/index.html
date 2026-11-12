@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faye Papadopoulos · Intro video</title>
+<!-- 2026-11-12: her intro video for job applications. Shared by link only: not in search results, not linked from the homepage. -->
+<meta name="robots" content="noindex">
+<meta name="description" content="A short video from Faye Papadopoulos, graphic designer in Berlin, looking for part-time remote work in design, social media or video.">
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Faye Papadopoulos · Intro video">
+<meta property="og:description" content="Graphic designer in Berlin, looking for part-time remote work in design, social media or video. 1 minute 28.">
+<meta property="og:image" content="https://fayepapadopoulos.com/intro/poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:video" content="https://fayepapadopoulos.com/intro/faye-intro.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta property="og:url" content="https://fayepapadopoulos.com/intro/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#14361F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#14361F;
+  --forest-2:#1C4A2C;
+  --green:#256B41;
+  --green-br:#4EA974;
+  --bg:#F5F5F0;
+  --card:#FFFFFF;
+  --ink:#101210;
+  --dim:#7A7D76;
+  --line:#E2E3DA;
+  --fd:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --fm:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fd);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--forest);color:#EAF0EA}
+
+.top{background:var(--forest);color:#EAF0EA}
+.top .in{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.m{font-family:var(--fm);font-size:11px;letter-spacing:.02em;text-transform:uppercase}
+.top .home{color:#EAF0EA;opacity:.85}
+.top .home:hover{opacity:1;color:var(--green-br)}
+.br::before{content:"⌜";color:var(--green-br);margin-right:6px}
+
+main{max-width:1080px;margin:0 auto;padding:40px 24px 72px}
+.label{color:var(--green)}
+h1{font-size:clamp(40px,5.4vw,64px);font-weight:600;letter-spacing:-.025em;line-height:1;margin-top:12px}
+.lede{font-size:clamp(18px,2vw,21px);line-height:1.45;max-width:640px;margin-top:14px;color:#2A2D29}
+
+/* the whole video fits on a laptop screen without scrolling: width follows the window height */
+.player{margin-top:30px;max-width:max(520px,calc((100vh - 300px) * 16 / 9 + 20px));background:var(--forest);border-radius:14px;padding:10px;box-shadow:0 18px 50px -24px rgba(20,54,31,.55)}
+video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:#000}
+
+.next{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:500;padding:15px 22px;border-radius:999px;border:1.5px solid var(--forest);transition:background .15s,color .15s}
+.btn.main{background:var(--forest);color:#fff}
+.btn.main:hover{background:var(--green)}
+.btn:not(.main):hover{background:var(--forest);color:#fff}
+.btn .m{font-size:10.5px;opacity:.7}
+
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 24px}
+
+@media(max-width:600px){
+  main{padding:36px 16px 56px}
+  .top .in{padding:14px 16px}
+  .player{margin-top:28px;padding:6px;border-radius:10px}
+  video{border-radius:6px}
+  .next{flex-direction:column}
+  .btn{justify-content:center}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <span class="m br">Intro video</span>
+    <a class="m home" href="/">fayepapadopoulos.com ↗</a>
+  </div>
+</header>
+
+<main>
+  <p class="m label">1 min 28 · sound on</p>
+  <h1>Faye Papadopoulos</h1>
+  <p class="lede">Graphic designer in Berlin, looking for a part-time remote role in design, social media or video. US and EU citizen.</p>
+
+  <div class="player">
+    <video controls playsinline preload="metadata" poster="poster.jpg">
+      <source src="faye-intro.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="faye-intro.mp4">Download it here.</a>
+    </video>
+  </div>
+
+  <nav class="next" aria-label="More from Faye">
+    <a class="btn main" href="/">See my portfolio <span aria-hidden="true">→</span></a>
+    <a class="btn" href="/faye-papadopoulos-resume.pdf">My CV <span class="m">PDF</span></a>
+    <a class="btn" href="mailto:fayepapadop@gmail.com">fayepapadop@gmail.com</a>
+  </nav>
+
+  <p class="foot m"><span>Faye Papadopoulos</span><span>Berlin</span><span>Open to part-time remote work</span></p>
+</main>
+</body>
+</html>

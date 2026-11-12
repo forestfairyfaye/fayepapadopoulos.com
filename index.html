@@ -228,6 +228,18 @@ a{color:inherit;text-decoration:none}
 .run.wposter .proj-img{max-width:400px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
 .run.wposter2 .proj-img{max-width:840px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
 .proj-img.r43 .sh img{aspect-ratio:4/3}
+/* Reel covers are 9:16 and are shown whole, never cropped to the 4:5 post shape */
+.proj-img.r916 .sh img{aspect-ratio:9/16}
+/* a 4:5 carousel in a 9:16 row sits whole on its own blush ground instead of being cropped */
+.proj-img.r916 .sh.car{background:#F7EAE2}
+.proj-img.r916 .sh.car img{object-fit:contain;filter:none}
+/* photo credits for CC BY images, under the run they belong to */
+/* one Instagram link under each tile, in the same columns as the grid */
+.iglinks{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.iglinks a{background:#FAFAF7;font-family:var(--fm);font-size:10px;letter-spacing:.02em;color:var(--green);padding:9px 12px;text-align:center;transition:background .2s,color .2s}
+.iglinks a:hover,.iglinks a:focus-visible{background:var(--forest);color:#E9F0EA}
+@media(max-width:600px){.iglinks{grid-template-columns:repeat(2,1fr)}}
+.run .credit{font-family:var(--fm);font-size:9.5px;line-height:1.5;color:var(--dim);padding:8px 18px 10px;border-top:1px solid var(--line);background:#FAFAF7}
 /* the book pages are 585x715 with a wide empty margin top and bottom, so the frame
    is cut to the printed image band and the page white is cropped away */
 .proj-img.book .sh img{aspect-ratio:585/355;object-fit:cover;object-position:center 52%}
@@ -289,7 +301,10 @@ a{color:inherit;text-decoration:none}
   width:min(94vw,1180px);aspect-ratio:16/9;max-height:78vh;
   border:0;background:#000;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
-.lb-fig img[hidden],.lb-frame[hidden]{display:none}
+/* a Reel plays upright in the same viewer */
+.lb-reel{height:min(80vh,960px);aspect-ratio:9/16;max-width:92vw;background:#000;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb-reel.r45{aspect-ratio:4/5}
+.lb-fig img[hidden],.lb-frame[hidden],.lb-reel[hidden]{display:none}
 .lb-btn{
   position:absolute;background:transparent;border:1px solid rgba(201,220,207,.3);
   color:#E9F0EA;cursor:pointer;font-family:var(--fm);line-height:1;
@@ -308,6 +323,7 @@ a{color:inherit;text-decoration:none}
 @media(max-width:700px){
   .lb-nav{top:auto;bottom:14px;transform:none;height:42px}
   .lb-fig img{max-height:66vh}
+  .lb-reel{height:min(70vh,calc(92vw * 16 / 9))}
 }
 @media(prefers-reduced-motion:reduce){
   .sh img,.lb,.lb-fig img,.sh::after{transition:none}
@@ -451,24 +467,39 @@ footer h2 em{font-style:normal;color:var(--green-br)}
           </div>
         </div>
 
+        <!-- 2026-11-12: new examples from Oct and Nov 2026, with one Reel each that plays in the viewer -->
         <figure class="run">
-          <figcaption><b>The studio brand</b> — Fraunces on blush and plum, one idea per frame</figcaption>
-          <div class="proj-img n4">
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/bts-meet-the-designer/design.png" alt="by Faye — behind the brand"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/intro-meet-faye/design.png" alt="by Faye — introduction post"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/tips-12-post-ideas/slide-1.png" alt="by Faye — 12 things to post that aren’t a listing, the cover of the content ideas carousel"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="brand/content-kit/basics-04-starter-kit/slide-1.png" alt="by Faye — Basics carousel"></button>
+          <figcaption><b>The studio brand</b> · posts on @byfayesocial, Fraunces on blush and plum · click the carousel to swipe it, play the Reel with sound</figcaption>
+          <div class="proj-img n4 r916">
+            <button class="sh play car" type="button" data-cap="Three Instagram changes that affect your posts · carousel · 6 slides"
+              data-gallery='[{"mp4":"updated-portfolio/social/bf-ig-changes-1.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-2.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-3.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-4.mp4"},{"img":"updated-portfolio/social/bf-ig-changes-5.jpg","alt":"Slide 5 of the carousel"},{"img":"updated-portfolio/social/bf-ig-changes-6.jpg","alt":"Slide 6 of the carousel"}]'>
+              <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-ig-changes-1.jpg" alt="by Faye carousel: Three Instagram changes that affect your posts. Three drawn cards: 5 hashtags per post, Google search, and the 3:4 profile grid">
+              <span class="pl">▶</span><span class="rt">Carousel · 6 slides</span>
+            </button>
+            <button class="sh play" type="button" data-mp4="updated-portfolio/social/bf-origin-story.mp4" data-cap="I grew up in a real estate office · Reel · 0:52 · my own voice">
+              <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-origin-story.jpg" alt="by Faye Reel: I grew up in a real estate office, told in my own voice, with a family photo from the office">
+              <span class="pl">▶</span><span class="rt">Reel · 0:52 · my voice</span>
+            </button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/bf-nine-posts.jpg" alt="by Faye Reel cover: What a seller reads in your last nine posts, drawn as a three by three grid of post tiles"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/bf-instagram-words.jpg" alt="by Faye Reel cover: Instagram words, in real estate words. Reel means MLS listing, Story means open house, Reach means foot traffic, Send means referral, Collab means co-listing"></button>
           </div>
+          <div class="iglinks"><a href="https://www.instagram.com/byfayesocial/p/DewYAcxiqvk/" target="_blank" rel="noopener" aria-label="Three Instagram changes carousel on Instagram">Carousel on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/DfCkoDtK012/" target="_blank" rel="noopener" aria-label="I grew up in a real estate office Reel on Instagram">Origin story on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/DfUbY8lqyt0/" target="_blank" rel="noopener" aria-label="What a seller reads in your last nine posts Reel on Instagram">Nine posts on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/DfhSGN_K2f_/" target="_blank" rel="noopener" aria-label="Instagram words Reel on Instagram">Instagram words on Instagram ↗</a></div>
+          <p class="credit">The Reels play here with the sound I made for them. To hear them with the music they went out with, open them on Instagram.</p>
         </figure>
 
         <figure class="run">
-          <figcaption><b>The client</b> — Elias Papadopoulos, RE/MAX broker, Greater Boston</figcaption>
+          <figcaption><b>The client</b> · Elias Papadopoulos, RE/MAX broker, Greater Boston · a Reel and three carousels</figcaption>
           <div class="proj-img n4">
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/sold-post.png" alt="Elias — asked $799,000, sold for $890,000"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/neighbourhood-guide.png" alt="Elias — the Roslindale neighbourhood guide carousel"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/buyer-checklist.png" alt="Elias — the first-time buyer checklist carousel"></button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="client-work/client-review.png" alt="Elias — a client review, five stars"></button>
+            <button class="sh play" type="button" data-mp4="updated-portfolio/social/el-citgo-sign.mp4" data-cap="Where did Boston's CITGO sign go? · Reel · 0:29">
+              <img loading="lazy" decoding="async" src="updated-portfolio/social/el-citgo-sign.jpg" alt="Elias Reel: Where did Boston's CITGO sign go? The sign's frame under scaffolding against a blue sky, with the line Due back in November">
+              <span class="pl">▶</span><span class="rt">Reel · 0:29</span>
+            </button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/el-8-words.jpg" alt="Elias carousel cover: 8 words you'll hear buying your first home, drawn as a search box over his listing's living room"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/el-worth-hiring.jpg" alt="Elias carousel cover: Four things that make an agent worth hiring, with his portrait and a checklist of like, trust, care and communicate"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/el-30-years.jpg" alt="Elias carousel cover: Selling a home you've lived in for 30 years? Here's where it starts, over the front of one of his listings"></button>
           </div>
+          <div class="iglinks"><a href="https://www.instagram.com/eliasgreaterboston/reel/DfCnx5htt3b/" target="_blank" rel="noopener" aria-label="CITGO sign Reel on Instagram">CITGO sign on Instagram ↗</a><a href="https://www.instagram.com/eliasgreaterboston/p/DfUcDxeDSvK/" target="_blank" rel="noopener" aria-label="8 words carousel on Instagram">8 words on Instagram ↗</a><a href="https://www.instagram.com/eliasgreaterboston/p/DeZOwcBCkhu/" target="_blank" rel="noopener" aria-label="Four things that make an agent worth hiring carousel on Instagram">Worth hiring on Instagram ↗</a><a href="https://www.instagram.com/eliasgreaterboston/p/De1to3yjXvF/" target="_blank" rel="noopener" aria-label="Selling a home you've lived in for 30 years carousel on Instagram">30 years on Instagram ↗</a></div>
+          <p class="credit">The Reels play here with the sound I made for them. To hear them with the music they went out with, open them on Instagram. Photos in the CITGO Reel: Caleb Spicer and 4300streetcar (CC BY 4.0), via Wikimedia Commons.</p>
         </figure>
 
         <figure class="run">
@@ -956,6 +987,7 @@ footer h2 em{font-style:normal;color:var(--green-br)}
     <img id="lbImg" alt="">
     <iframe class="lb-frame" id="lbVid" hidden title="Film" allowfullscreen
       allow="autoplay; fullscreen; encrypted-media; picture-in-picture"></iframe>
+    <video class="lb-reel" id="lbReel" hidden controls playsinline preload="none"></video>
   </figure>
 </div>
 
@@ -972,23 +1004,66 @@ footer h2 em{font-style:normal;color:var(--green-br)}
   var index = 0;
   var opener = null;   // button to restore focus to
 
+  var lbReel = document.getElementById('lbReel');
+
   function stopFilm() {
     lbVid.hidden = true;
     lbVid.removeAttribute('src');
+    lbReel.pause();
+    lbReel.hidden = true;
+    lbReel.removeAttribute('src');
+    lbReel.load();
   }
 
+  // an item is a grid button, or one slide of a carousel ({mp4} plays silent and loops, {img} is a still)
   function show(i) {
     index = (i + group.length) % group.length;
-    var btn = group[index];
+    var item = group[index];
+    var isBtn = !!item.getAttribute;
+    if (!isBtn) {
+      stopFilm();
+      if (item.mp4) {
+        lbImg.hidden = true;
+        lbImg.removeAttribute('src');
+        lbReel.classList.add('r45');
+        lbReel.muted = true;
+        lbReel.loop = true;
+        lbReel.hidden = false;
+        lbReel.src = item.mp4;
+        var q = lbReel.play();
+        if (q && q.catch) q.catch(function () {});
+      } else {
+        lbImg.hidden = false;
+        lbImg.src = item.img;
+        lbImg.alt = item.alt || '';
+      }
+      lbCount.textContent = (index + 1) + ' / ' + group.length;
+      prevBtn.hidden = nextBtn.hidden = group.length < 2;
+      return;
+    }
+    lbReel.classList.remove('r45');
+    lbReel.muted = false;
+    lbReel.loop = false;
+    var btn = item;
     var img = btn.querySelector('img');
     var yt = btn.getAttribute('data-yt');
-    // a film poster opens the player; everything else opens the image
+    var mp4 = btn.getAttribute('data-mp4');
+    // a film poster opens the player, a Reel poster plays the Reel; everything else opens the image
     if (yt) {
+      stopFilm();
       lbImg.hidden = true;
       lbImg.removeAttribute('src');
       lbVid.hidden = false;
       lbVid.src = 'https://www.youtube-nocookie.com/embed/' + yt +
         '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    } else if (mp4) {
+      stopFilm();
+      lbImg.hidden = true;
+      lbImg.removeAttribute('src');
+      lbReel.hidden = false;
+      lbReel.src = mp4;
+      var p = lbReel.play();
+      if (p && p.catch) p.catch(function () {});
     } else {
       stopFilm();
       lbImg.hidden = false;
@@ -1002,10 +1077,19 @@ footer h2 em{font-style:normal;color:var(--green-br)}
   }
 
   function open(btn) {
+    var gallery = btn.getAttribute('data-gallery');
     var grid = btn.closest('.proj-img');
-    group = grid ? Array.prototype.slice.call(grid.querySelectorAll('.sh')) : [btn];
     opener = btn;
-    show(group.indexOf(btn));
+    // show the viewer before anything plays: Chrome pauses a muted video that starts while hidden
+    lb.hidden = false;
+    if (gallery) {
+      // a carousel opens on its own slides, so the arrows swipe through it like on Instagram
+      group = JSON.parse(gallery);
+      show(0);
+    } else {
+      group = grid ? Array.prototype.slice.call(grid.querySelectorAll('.sh')) : [btn];
+      show(group.indexOf(btn));
+    }
     lb.hidden = false;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(function () { lb.classList.add('on'); });

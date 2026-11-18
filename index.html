@@ -236,13 +236,9 @@ a{color:inherit;text-decoration:none}
 .run.wposter .proj-img{max-width:400px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
 .run.wposter2 .proj-img{max-width:840px;margin-left:auto;margin-right:auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
 .proj-img.r43 .sh img{aspect-ratio:4/3}
-/* Reel covers are 9:16 and are shown whole, never cropped to the 4:5 post shape */
-.proj-img.r916 .sh img{aspect-ratio:9/16}
-/* a 4:5 carousel in a 9:16 row sits whole on its own blush ground instead of being cropped */
-.proj-img.r916 .sh.car{background:#F7EAE2}
-.proj-img.r916 .sh.car img{object-fit:contain;filter:none}
-.proj-img.r916 .sh.plum{background:#381F2E}
-.proj-img.r916 .sh.plum img{object-fit:contain}
+/* 2026-11-18: every post tile is 4:5, the Instagram post shape; Reel covers are cut to it,
+   and the Reel itself still plays upright in the viewer */
+.proj-img .sh.car img{filter:none}
 /* photo credits for CC BY images, under the run they belong to */
 /* one Instagram link under each tile, in the same columns as the grid */
 .iglinks{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}
@@ -532,21 +528,21 @@ footer h2 em{font-style:normal;color:var(--green-br)}
         <!-- 2026-11-12: new examples from Oct and Nov 2026. 2026-11-18: refreshed with the newest posted work (listing-words quiz; Elias inspection Reel and Boston words carousel) -->
         <figure class="run">
           <figcaption><b>The studio brand</b> · posts on @byfayesocial, Fraunces on blush and plum · click the carousel to swipe it, play the Reels with sound</figcaption>
-          <div class="proj-img n4 r916">
+          <div class="proj-img n4">
             <button class="sh play car" type="button" data-cap="Three Instagram changes that affect your posts · carousel · 6 slides"
               data-gallery='[{"mp4":"updated-portfolio/social/bf-ig-changes-1.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-2.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-3.mp4"},{"mp4":"updated-portfolio/social/bf-ig-changes-4.mp4"},{"img":"updated-portfolio/social/bf-ig-changes-5.jpg","alt":"Slide 5 of the carousel"},{"img":"updated-portfolio/social/bf-ig-changes-6.jpg","alt":"Slide 6 of the carousel"}]'>
               <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-ig-changes-1.jpg" alt="by Faye carousel: Three Instagram changes that affect your posts. Three drawn cards: 5 hashtags per post, Google search, and the 3:4 profile grid">
               <span class="pl">▶</span><span class="rt">Carousel · 6 slides</span>
             </button>
-            <button class="sh play plum" type="button" data-mp4="updated-portfolio/social/bf-listing-words.mp4" data-cap="Just vague, or a Fair Housing risk? · Reel · 0:49 · a listing-language quiz">
+            <button class="sh play" type="button" data-mp4="updated-portfolio/social/bf-listing-words.mp4" data-cap="Just vague, or a Fair Housing risk? · Reel · 0:49 · a listing-language quiz">
               <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-listing-words.jpg" alt="by Faye Reel: Just vague, or a Fair Housing risk? A listing line, Perfect for a young family, stamped Fair Housing risk, with Say instead: Three bedrooms on one floor">
               <span class="pl">▶</span><span class="rt">Reel · 0:49</span>
             </button>
             <button class="sh play" type="button" data-mp4="updated-portfolio/social/bf-origin-story.mp4" data-cap="I grew up in a real estate office · Reel · 0:52 · my own voice">
-              <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-origin-story.jpg" alt="by Faye Reel: I grew up in a real estate office, told in my own voice, with a family photo from the office">
-              <span class="pl">▶</span><span class="rt">Reel · 0:52 · my voice</span>
+              <img loading="lazy" decoding="async" src="updated-portfolio/social/bf-origin-story-45.jpg" alt="by Faye Reel: I grew up in a real estate office, told in my own voice, with a family photo from the office">
+              <span class="pl">▶</span><span class="rt">Reel · 0:52</span>
             </button>
-            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/bf-nine-posts.jpg" alt="by Faye Reel cover: What a seller reads in your last nine posts, drawn as a three by three grid of post tiles"></button>
+            <button class="sh" type="button"><img loading="lazy" decoding="async" src="updated-portfolio/social/bf-nine-posts-45.jpg" alt="by Faye Reel cover: What a seller reads in your last nine posts, drawn as a three by three grid of post tiles"></button>
           </div>
           <div class="iglinks"><a href="https://www.instagram.com/byfayesocial/p/DewYAcxiqvk/" target="_blank" rel="noopener" aria-label="Three Instagram changes carousel on Instagram">Carousel on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/Df0Sio0K8JR/" target="_blank" rel="noopener" aria-label="Just vague, or a Fair Housing risk? Reel on Instagram">Quiz on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/DfCkoDtK012/" target="_blank" rel="noopener" aria-label="I grew up in a real estate office Reel on Instagram">Origin story on Instagram ↗</a><a href="https://www.instagram.com/byfayesocial/reel/DfUbY8lqyt0/" target="_blank" rel="noopener" aria-label="What a seller reads in your last nine posts Reel on Instagram">Nine posts on Instagram ↗</a></div>
           <p class="credit">The Reels play here with the sound I made for them. To hear them with the music they went out with, open them on Instagram.</p>

@@ -35,7 +35,7 @@
   --bg:#F5F5F0;
   --card:#FFFFFF;
   --ink:#101210;
-  --dim:#7A7D76;
+  --dim:#5C5F58;
   --line:#E2E3DA;
   --fd:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
   --fm:"JetBrains Mono",ui-monospace,monospace;
@@ -47,8 +47,8 @@ a{color:inherit;text-decoration:none}
 
 .top{background:var(--forest);color:#EAF0EA}
 .top .in{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.m{font-family:var(--fm);font-size:11px;letter-spacing:.02em;text-transform:uppercase}
-.top .home{color:#EAF0EA;opacity:.85}
+.m{font-family:var(--fm);font-size:12px;letter-spacing:.02em;text-transform:uppercase}
+.top .home{color:#EAF0EA;opacity:.85;display:inline-flex;align-items:center;min-height:44px}
 .top .home:hover{opacity:1;color:var(--green-br)}
 .br::before{content:"⌜";color:var(--green-br);margin-right:6px}
 
@@ -66,8 +66,12 @@ video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:#0
 .btn.main{background:var(--forest);color:#fff}
 .btn.main:hover{background:var(--green)}
 .btn:not(.main):hover{background:var(--forest);color:#fff}
-.btn .m{font-size:10.5px;opacity:.7}
+.btn .m{font-size:12px;opacity:.75}
 
+.script{margin-top:22px;max-width:680px;border-top:1px solid var(--line)}
+.script summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:var(--green)}
+.script summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.script p{font-size:17px;line-height:1.6;margin:0 0 14px;color:#2A2D29}
 .foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 24px}
 
 @media(max-width:600px){
@@ -89,16 +93,28 @@ video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:#0
 </header>
 
 <main>
-  <p class="m label">1 min 28 · sound on</p>
+  <p class="m label">1 min 28 · sound on · captions on screen</p>
   <h1>Faye Papadopoulos</h1>
   <p class="lede">Graphic designer in Berlin, looking for a part-time remote role in design, social media or video. US and EU citizen.</p>
 
   <div class="player">
-    <video controls playsinline preload="metadata" poster="poster.jpg">
+    <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Faye introduces herself and her work, in her own voice, with captions on screen. A written transcript is below the video.">
       <source src="faye-intro.mp4" type="video/mp4">
       Your browser can't play this video. <a href="faye-intro.mp4">Download it here.</a>
     </video>
   </div>
+
+  <details class="script">
+    <summary class="m">Read the transcript</summary>
+    <p>Hi, I&rsquo;m Faye. I&rsquo;m a graphic designer based in Berlin, and I&rsquo;m looking for a part-time remote role in design, social media or video.</p>
+    <p>This year I started my own studio, by Faye Social. I make and run Instagram for real estate agents in the US, all from Berlin. I built the whole thing myself: the brand, the website and the content.</p>
+    <p>My first client is a broker in Boston. I built his brand, and every week I plan, design, write, edit and post everything on his account.</p>
+    <p>To find more clients, I wrote and ran an email campaign to about 2,000 agents across the US. Everyone who wrote back got their own video from me, and a sample page of what their Instagram could look like.</p>
+    <p>Now I&rsquo;m running my first Meta ad. I wrote the story, made the video in all three formats, built the landing page it sends people to, and set it up in Ads Manager myself. So I know paid social from both sides: making the ad, and getting it in front of the right people.</p>
+    <p>I do all of it with the AI tools that I direct. I write the brief, they do the heavy lifting, and I edit everything before it goes out. That&rsquo;s how one person can run a whole studio.</p>
+    <p>Before by Faye, I designed brands for No One is Listening, a media platform in Italy. I also write, shoot and edit my own short films. I&rsquo;m a US and EU citizen, so no visa is needed, and I can work American or European hours.</p>
+    <p>You can find all my work on fayepapadopoulos.com. I would really love to hear what you&rsquo;re working on, and to see if we&rsquo;d be a good match.</p>
+  </details>
 
   <nav class="next" aria-label="More from Faye">
     <a class="btn main" href="/">See my portfolio <span aria-hidden="true">→</span></a>

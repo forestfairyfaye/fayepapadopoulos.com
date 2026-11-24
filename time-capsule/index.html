@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faye Papadopoulos · Time capsule</title>
+<!-- 2026-11-24: A nostalgia page: Faye has been online and making things since age 8. Built from her own
+     YouTube channels (view counts read from her YouTube Studio on 2026-11-24). Approved by Faye and linked from
+     the homepage the same day. The three embedded videos are her unlisted uploads; their thumbnails load from
+     YouTube's own image servers (i.ytimg.com). arena-brawl.jpg is the full thumbnail file she sent. Nothing
+     here is invented: every number is one she showed on screen. -->
+<meta name="description" content="Faye Papadopoulos has been online and making things since she was 8: stop motion, Minecraft parodies, vlogs, music. A time capsule of the work that led to the design job.">
+<meta property="og:title" content="Faye Papadopoulos · Time capsule">
+<meta property="og:image" content="https://fayepapadopoulos.com/thumbnails/gaming-survival-games.jpg">
+<meta property="og:url" content="https://fayepapadopoulos.com/time-capsule/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#14361F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#14361F;--green-br:#4EA974;
+  --ink:#14243a;--blue:#3b6ea8;--lt:#dcebfa;--line:#9db9dc;
+  --pink:#ff5fb7;--cyan:#6df0ff;--gold:#ffd84d;--lilac:#b58cff;
+  --fm:"JetBrains Mono",ui-monospace,monospace;
+  --old:Verdana,Geneva,Tahoma,sans-serif;
+  --fun:"Comic Sans MS","Comic Sans","Chalkboard SE","Comic Neue",cursive;
+  --head:"Trebuchet MS","Lucida Grande",Verdana,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--old);font-size:16px;line-height:1.55;color:var(--ink);
+  background-color:#12082a;
+  background-image:
+    radial-gradient(circle at 18px 22px,var(--pink) 1.6px,transparent 2.2px),
+    radial-gradient(circle at 66px 58px,var(--cyan) 1.3px,transparent 2px),
+    radial-gradient(circle at 98px 100px,#fff 1px,transparent 1.6px),
+    radial-gradient(circle at 40px 96px,var(--gold) 1.1px,transparent 1.8px);
+  background-size:120px 120px;
+}
+a{color:#0b4f9c;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#c2185b}
+img{display:block;max-width:100%}
+
+/* the grown-up bar, same as the other pages on the site */
+.top{background:var(--forest);color:#EAF0EA;font-family:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif}
+.top .in{max-width:980px;margin:0 auto;padding:6px 16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.top .m{font-family:var(--fm);font-size:12px;letter-spacing:.02em;text-transform:uppercase}
+.top a{color:#EAF0EA;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;opacity:.88}
+.top a:hover{opacity:1;color:var(--green-br)}
+
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 56px}
+
+/* the old nav strip */
+.nav{background:var(--blue);border:2px solid #fff;border-top:0;display:flex;flex-wrap:wrap;justify-content:center;gap:0}
+.nav a{color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;font-family:var(--head)}
+.nav a:hover{background:#2a5686;color:#fff;text-decoration:underline}
+
+/* header */
+.hero{text-align:center;padding:44px 8px 26px}
+.kicker{font-family:var(--fun);font-size:18px;color:var(--cyan);letter-spacing:.04em}
+h1{
+  font-family:"Press Start 2P",ui-monospace,monospace;font-weight:400;font-size:clamp(20px,4.4vw,42px);line-height:1.5;padding-bottom:.1em;margin:14px 0 12px;
+  background:linear-gradient(90deg,var(--pink),var(--gold),var(--cyan),var(--lilac),var(--pink));background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  animation:shine 6s linear infinite;
+}
+@keyframes shine{to{background-position:250% 0}}
+.tag{font-family:var(--fun);font-size:clamp(20px,3vw,26px);color:#fff}
+.tag b{color:var(--gold);font-weight:700}
+.stars{color:var(--gold);letter-spacing:.5em;font-size:18px;margin-top:10px}
+.stars span{display:inline-block;animation:tw 1.6s ease-in-out infinite}
+.stars span:nth-child(2){animation-delay:.4s}.stars span:nth-child(3){animation-delay:.8s}
+.stars span:nth-child(4){animation-delay:1.2s}.stars span:nth-child(5){animation-delay:.2s}
+@keyframes tw{50%{opacity:.25;transform:scale(.8)}}
+
+.marq{background:#000;border-top:2px solid var(--pink);border-bottom:2px solid var(--cyan);overflow:hidden;white-space:nowrap;margin-bottom:22px}
+.marq span{display:inline-block;padding:9px 0;font-family:var(--fun);font-size:16px;color:var(--gold);animation:marq 34s linear -9s infinite}
+@keyframes marq{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+
+/* the two-column profile */
+.cols{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}
+.box{background:#fff;border:2px solid var(--blue);margin-bottom:20px}
+.box>h2{background:var(--blue);color:#fff;font-family:var(--head);font-size:17px;font-weight:700;padding:7px 12px;letter-spacing:.01em}
+.pad{padding:14px}
+.lt{background:var(--lt)}
+
+.who{text-align:center}
+.who .ava{width:168px;height:168px;margin:0 auto 10px;border:3px solid var(--blue);overflow:hidden;background:#000}
+.who .ava img{width:100%;height:100%;object-fit:cover;transform:scale(2.35);transform-origin:52% 20%}
+.who b{font-family:var(--head);font-size:22px;display:block;line-height:1.2}
+.who .line{font-size:15px;margin-top:4px}
+.who .mood{font-family:var(--fun);font-size:16px;margin-top:8px}
+.cta{display:grid;gap:8px;margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;font-family:var(--head);font-weight:700;font-size:16px;text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);color:var(--ink)}
+.btn.main{background:var(--pink)}
+
+dl.det{display:grid;grid-template-columns:auto 1fr;gap:0}
+dl.det dt,dl.det dd{padding:7px 12px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.4}
+dl.det dt{font-weight:700;background:var(--lt);padding-right:8px}
+dl.det dd:last-of-type,dl.det dt:nth-last-of-type(1){border-bottom:0}
+
+.play{background:#101827;color:#fff;font-family:var(--fm)}
+.play .row{display:flex;gap:10px;align-items:center}
+.disc{flex:none;width:44px;height:44px;border-radius:50%;background:conic-gradient(var(--pink),var(--gold),var(--cyan),var(--lilac),var(--pink));position:relative;animation:spin 4s linear infinite}
+.disc::after{content:"";position:absolute;inset:16px;border-radius:50%;background:#101827}
+@keyframes spin{to{transform:rotate(360deg)}}
+.play .t{font-size:14px;line-height:1.35}
+.play .t b{display:block;font-size:15px;color:var(--cyan)}
+.bar{height:6px;background:#2a3550;margin:12px 0 10px;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:38%;background:var(--pink)}
+.play a{color:var(--gold);font-size:14px}
+.play a:hover{color:#fff}
+
+.top8{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px}
+.top8 a{display:block;text-align:center;text-decoration:none;font-size:12px;line-height:1.2;color:var(--ink);font-weight:700}
+.top8 a:hover{color:#c2185b}
+.top8 .t{aspect-ratio:1;overflow:hidden;border:2px solid var(--blue);background:#000;margin-bottom:4px}
+.top8 .t img{width:100%;height:100%;object-fit:cover}
+.top8 .you .t{background:var(--pink);display:grid;place-items:center;font-family:var(--head);font-size:22px;font-weight:900;color:var(--ink)}
+.cap8{padding:0 12px 12px;font-size:13px;line-height:1.4}
+
+/* right column */
+.about p+p{margin-top:12px}
+.about .meet{margin-top:14px;padding:10px 12px;background:var(--lt);border:1px solid var(--line);font-size:15px}
+.about .meet b{font-family:var(--head)}
+
+.entry{border-top:2px solid var(--blue)}
+.entry:first-of-type{border-top:0}
+.eh{background:var(--lt);padding:10px 14px;border-bottom:1px solid var(--line)}
+.eh .sub{font-family:var(--head);font-size:19px;font-weight:700;line-height:1.25}
+.eh .meta{font-size:13px;line-height:1.5;margin-top:3px;color:#26405f}
+.eh .meta b{color:var(--ink)}
+.eb{padding:14px}
+.eb p+p{margin-top:12px}
+.stat{margin-top:12px;font-family:var(--fm);font-size:13px;background:#101827;color:var(--gold);padding:8px 10px;line-height:1.5}
+.media{display:grid;gap:12px;margin-top:14px}
+.media.two{grid-template-columns:1fr 1fr}
+.shot figcaption,.vcap{font-size:13px;line-height:1.4;margin-top:6px;color:#26405f}
+.shot img{width:100%;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--blue);background:#000}
+.frame{position:relative;aspect-ratio:16/9;border:2px solid var(--blue);background:#000}
+.frame iframe,.frame .vid{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid{display:block;cursor:pointer}
+.vid img{width:100%;height:100%;object-fit:cover}
+.vid .p{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--pink);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.vid .p::after{content:"";position:absolute;left:25px;top:16px;border-left:20px solid var(--ink);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.vid:hover .p{background:var(--gold)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pair .lab{font-family:var(--fm);font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;color:#26405f}
+.after{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+.after .btn{display:inline-flex}
+
+table.int{width:100%;border-collapse:collapse}
+table.int th,table.int td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;font-size:15px;line-height:1.45}
+table.int th{width:104px;background:var(--lt);font-family:var(--head)}
+table.int tr:last-child th,table.int tr:last-child td{border-bottom:0}
+
+.cmt{padding:14px;font-size:15px}
+.cmt .zero{font-family:var(--fun);font-size:17px;margin-bottom:10px}
+
+.foot{margin-top:6px;color:#e6dff5;font-size:14px;line-height:1.55;text-align:center}
+.foot a{color:var(--cyan)}
+.foot a:hover{color:#fff}
+
+.tag b{white-space:nowrap}
+@media(max-width:820px){
+  .cols{grid-template-columns:1fr;gap:0 20px}
+  /* phone: profile first, then the story, then the side boxes */
+  .cols aside{display:contents}
+  .who{order:1}
+  .cols main{order:2}
+  .side{order:3}
+  .who .ava{width:150px;height:150px}
+}
+@media(max-width:560px){
+  .media.two,.pair{grid-template-columns:1fr}
+  .nav a{padding:0 11px}
+}
+@media(prefers-reduced-motion:reduce){
+  h1{animation:none;background-position:0 0}
+  .stars span,.disc{animation:none}
+  .marq{white-space:normal;text-align:center}
+  .marq span{animation:none;padding:9px 12px}
+}
+/* the "before you enter" popup */
+body.lock{overflow:hidden}
+dialog.note{border:0;padding:0;background:none;width:min(500px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:visible;color:var(--ink);margin:auto}
+dialog.note::backdrop{background:rgba(10,4,26,.9)}
+dialog.note[open]{animation:pop .22s ease-out}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
+.win{background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--pink)}
+.win .tb{background:linear-gradient(90deg,#3b6ea8,#6fa0d8);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 14px;font-family:var(--head);font-weight:700;font-size:15px}
+.win .tb i{display:inline-block;width:12px;height:12px;border:2px solid #fff;margin-left:6px}
+.win .msg{background:var(--lt);padding:22px 22px 24px;font-family:var(--fun)}
+.win .msg .hi{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:12px}
+.win .msg p+p{font-size:19px;line-height:1.55}
+.win .acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:20px}
+.win .acts a{font-family:var(--old);font-size:15px}
+@media(prefers-reduced-motion:reduce){dialog.note[open]{animation:none}}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.vid:focus-visible,.btn:focus-visible{outline-color:#c2185b}
+</style>
+</head>
+<body>
+
+<dialog class="note" id="note" aria-labelledby="noteTitle" aria-describedby="noteText">
+  <div class="win">
+    <div class="tb"><span id="noteTitle">a note from faye</span><span aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <div class="msg" id="noteText">
+      <p class="hi">hello hiring recruiters and friends!</p>
+      <p>you are about to enter a very vulnerable account of my earliest, earliest work. please be kind and remember i was a child making these things. make fun of me accordingly, lol.</p>
+      <div class="acts">
+        <button class="btn main" id="noteGo" type="button" autofocus>ok, i'll be nice</button>
+        <a href="../">take me back to the portfolio</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<header class="top"><div class="in"><span class="m">Time capsule</span><a class="m" href="../">fayepapadopoulos.com ↗</a></div></header>
+
+<div class="wrap">
+
+<nav class="nav" aria-label="Site">
+  <a href="../">Portfolio</a>
+  <a href="../faye-papadopoulos-resume.pdf">CV</a>
+  <a href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="mailto:fayepapadop@gmail.com">Mail</a>
+</nav>
+
+<section class="hero">
+  <p class="kicker">~ welcome to my page ~</p>
+  <h1>Faye's Time Capsule</h1>
+  <p class="tag">online and making things since <b>age 8</b></p>
+  <p class="stars" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+</section>
+
+<div class="marq" aria-label="Open to part-time remote work. Please be kind to the stop motion."><span>★ open to part-time remote work ★ please be kind to the stop motion ★ now playing: GRRRL RUIN ★ thank you for the 300 subs (Oct 2014) ★ scroll down for the whole story ★</span></div>
+
+<div class="cols">
+
+  <!-- LEFT -->
+  <aside>
+    <section class="box who" aria-label="Profile">
+      <h2>Faye</h2>
+      <div class="pad lt">
+        <div class="ava"><img src="../thumbnails/gaming-survival-games.jpg" alt="My Minecraft character in iron armour, rendered in Cinema 4D" width="1770" height="995"></div>
+        <b>Faye Papadopoulos</b>
+        <p class="line">Graphic designer · Berlin, DE</p>
+        <p class="line">Online since age 8</p>
+        <p class="mood">Mood: nostalgic ♪</p>
+        <div class="cta">
+          <a class="btn main" href="mailto:fayepapadop@gmail.com">Send message</a>
+          <a class="btn" href="../faye-papadopoulos-resume.pdf">Download my CV</a>
+          <a class="btn" href="../">Back to my portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="box side" aria-label="Details">
+      <h2>Faye's details</h2>
+      <dl class="det">
+        <dt>Status</dt><dd>Open to part-time remote roles</dd>
+        <dt>Here for</dt><dd>Work</dd>
+        <dt>Based in</dt><dd>Berlin, DE</dd>
+        <dt>Citizen</dt><dd>US and EU</dd>
+        <dt>Languages</dt><dd>English, Spanish, German (B1)</dd>
+        <dt>Member since</dt><dd>~2011 (age 8)</dd>
+        <dt>Last login</dt><dd id="today">today</dd>
+      </dl>
+    </section>
+
+    <section class="box play side" aria-label="Now playing">
+      <h2>Now playing</h2>
+      <div class="pad">
+        <div class="row"><div class="disc" aria-hidden="true"></div>
+          <div class="t"><b>GRRRL RUIN</b>my own music, covers and originals</div></div>
+        <div class="bar" aria-hidden="true"><i></i></div>
+        <a href="https://www.youtube.com/@grrrlruin" target="_blank" rel="noopener">Listen on YouTube ↗</a>
+      </div>
+    </section>
+
+    <section class="box side" aria-label="Top 8">
+      <h2>Faye's Top 8</h2>
+      <div class="top8">
+        <a href="#e1"><div class="t"><img src="https://i.ytimg.com/vi/wQmIMa8l_rA/hqdefault.jpg" alt="" loading="lazy"></div>Stop motion</a>
+        <a href="#e2"><div class="t"><img src="arena-brawl.jpg" alt="" loading="lazy"></div>Arena Brawl</a>
+        <a href="#e2"><div class="t"><img src="../thumbnails/gaming-survival-games.jpg" alt="" loading="lazy"></div>Survival Games</a>
+        <a href="#e2"><div class="t"><img src="https://i.ytimg.com/vi/J-DIAvIpZiw/hqdefault.jpg" alt="" loading="lazy"></div>Parody</a>
+        <a href="#e3"><div class="t"><img src="https://i.ytimg.com/vi/9yNq9cgAA6Q/hqdefault.jpg" alt="" loading="lazy"></div>Week in outfits</a>
+        <a href="#e3"><div class="t"><img src="../thumbnails/vlog-makeup-asmr.webp" alt="" loading="lazy"></div>ASMR makeup</a>
+        <a href="#e3"><div class="t"><img src="../thumbnails/vlog-skipped-school.webp" alt="" loading="lazy"></div>Skipped school</a>
+        <a class="you" href="mailto:fayepapadop@gmail.com"><div class="t">You?</div>Your project</a>
+      </div>
+      <p class="cap8">Not ranked, just the ones I'm happiest to show you.</p>
+    </section>
+  </aside>
+
+  <!-- RIGHT -->
+  <main>
+    <section class="box about" aria-label="About me">
+      <h2>About me</h2>
+      <div class="pad">
+        <p>Hi! I'm Faye. I made my first video at 8: Monster High dolls, stop motion, done badly. Then came Minecraft, then vlogs, then music. I never really stopped.</p>
+        <p>Now I'm a graphic designer in Berlin, and all of those habits turned into the job. I design brand systems, run social media, and shoot, animate and cut video. If you're hiring for any of that, this page is the long version of my CV.</p>
+        <div class="meet"><b>Who I'd like to meet:</b> a team that makes things for an audience and cares how they look. Bonus points if you remember the Monster High webisodes.</div>
+      </div>
+    </section>
+
+    <section class="box" aria-label="Blog">
+      <h2>Faye's blog</h2>
+
+      <article class="entry" id="e1">
+        <div class="eh">
+          <p class="sub">my first channel (it's rough)</p>
+          <p class="meta"><b>Date:</b> ~2011, age 8 · <b>Mood:</b> proud, a little embarrassed · <b>Category:</b> stop motion</p>
+        </div>
+        <div class="eb">
+          <p>Monster High dolls, stop motion, and a 7-episode series called The Monster Mystery. I also made product reviews and entered online contests. The most-watched one, a tour of my Monster High house and school, reached 3.3K views.</p>
+          <p>Press play if you dare.</p>
+          <div class="media">
+            <div>
+              <div class="frame"><a class="vid" href="https://www.youtube.com/watch?v=wQmIMa8l_rA" target="_blank" rel="noopener" data-id="wQmIMa8l_rA" data-title="My first stop motion video"><img src="https://i.ytimg.com/vi/wQmIMa8l_rA/hqdefault.jpg" alt="Thumbnail of my first stop-motion video" loading="lazy"><span class="p" aria-hidden="true"></span><span class="sr-only" style="position:absolute;left:-9999px">Play my first stop-motion video</span></a></div>
+              <p class="vcap">My first stop-motion video, left exactly as it was. <a href="https://www.youtube.com/watch?v=wQmIMa8l_rA" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="e2">
+        <div class="eh">
+          <p class="sub">minecraft, but with logos</p>
+          <p class="meta"><b>Date:</b> 2014 and on · <b>Mood:</b> determined · <b>Category:</b> gaming, animation</p>
+        </div>
+        <div class="eb">
+          <p>I ran a Minecraft channel where every series had its own look: Hunger Games, Skyblock, Capture the Flag. I rendered my own character in Cinema 4D for the thumbnails, and I hit 300 subscribers in October 2014.</p>
+          <p>Then I started making parodies. I wrote the lyrics, recorded them and animated the whole thing myself. Herobrine's Revenge, my first animation, reached 1,092 views, and my Break Free parody reached 2,127.</p>
+          <div class="media two">
+            <figure class="shot"><img src="arena-brawl.jpg" alt="Thumbnail: a blocky Minecraft skeleton fights my Minecraft character with a diamond sword on a sandy beach, big orange lettering reads ARENA BRAWL" loading="lazy"><figcaption>Arena Brawl, 2014. The 3D render and the logo are mine.</figcaption></figure>
+            <figure class="shot"><img src="../thumbnails/gaming-survival-games.jpg" alt="Thumbnail: my Minecraft character in iron armour holding a sword, with big blocky MINECRAFT SURVIVAL GAMES lettering" loading="lazy"><figcaption>Minecraft Survival Games, rendered in Cinema 4D.</figcaption></figure>
+          </div>
+          <div class="media">
+            <div>
+              <div class="frame"><a class="vid" href="https://youtu.be/J-DIAvIpZiw" target="_blank" rel="noopener" data-id="J-DIAvIpZiw" data-title="A Minecraft parody I wrote, recorded and animated"><img src="https://i.ytimg.com/vi/J-DIAvIpZiw/hqdefault.jpg" alt="Thumbnail of one of my Minecraft parodies" loading="lazy"><span class="p" aria-hidden="true"></span><span style="position:absolute;left:-9999px">Play my Minecraft parody</span></a></div>
+              <p class="vcap">A parody I wrote, recorded and animated. <a href="https://youtu.be/J-DIAvIpZiw" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="e3">
+        <div class="eh">
+          <p class="sub">vlogs, in all lowercase</p>
+          <p class="meta"><b>Date:</b> 2018 to 2021 · <b>Mood:</b> aesthetic · <b>Category:</b> lifestyle</p>
+        </div>
+        <div class="eb">
+          <p>Days in my life, hauls, a week of outfits, big white lowercase titles because that was the look. I shot and edited every one and made the thumbnails myself.</p>
+          <div class="media">
+            <div>
+              <div class="frame"><a class="vid" href="https://youtu.be/9yNq9cgAA6Q" target="_blank" rel="noopener" data-id="9yNq9cgAA6Q" data-title="A week in outfits, 2018"><img src="https://i.ytimg.com/vi/9yNq9cgAA6Q/hqdefault.jpg" alt="Thumbnail of my 2018 video A Week in Outfits" loading="lazy"><span class="p" aria-hidden="true"></span><span style="position:absolute;left:-9999px">Play A Week in Outfits</span></a></div>
+              <p class="vcap">A week in outfits, May 2018. <a href="https://youtu.be/9yNq9cgAA6Q" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+            </div>
+          </div>
+          <div class="media two">
+            <figure class="shot"><img src="../thumbnails/vlog-makeup-asmr.webp" alt="Vlog thumbnail: two mirror selfies with the title doing my makeup in asmr" loading="lazy"><figcaption>doing my makeup in asmr</figcaption></figure>
+            <figure class="shot"><img src="../thumbnails/vlog-skipped-school.webp" alt="Vlog thumbnail: a collage of room photos with the title i skipped school to clean" loading="lazy"><figcaption>i skipped school to clean :)</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="e4">
+        <div class="eh">
+          <p class="sub">then i picked up a guitar</p>
+          <p class="meta"><b>Date:</b> 2018 to now · <b>Mood:</b> loud, then soft · <b>Category:</b> music</p>
+        </div>
+        <div class="eb">
+          <p>I started posting covers and original songs, and it grew into its own project: GRRRL RUIN. My most-watched cover has 26,164 views and another has 13,236. The covers are other people's songs. The originals are mine.</p>
+          <div class="after"><a class="btn" href="https://www.youtube.com/@grrrlruin" target="_blank" rel="noopener">Listen on YouTube ↗</a></div>
+        </div>
+      </article>
+
+      <article class="entry" id="e5">
+        <div class="eh">
+          <p class="sub">so here I am (then and now)</p>
+          <p class="meta"><b>Date:</b> 2026 · <b>Mood:</b> employable · <b>Category:</b> work</p>
+        </div>
+        <div class="eb">
+          <p>I never stopped making things for an audience. I just got paid for it and picked better fonts. It's the same instinct as that Minecraft thumbnail: one clear image, one big line, readable on a phone. These days it's brand systems, social posts, Reels, thumbnails and video.</p>
+          <div class="pair">
+            <figure class="shot"><p class="lab">Then · Minecraft</p><img src="../thumbnails/gaming-survival-games.jpg" alt="My Minecraft Survival Games thumbnail" loading="lazy"></figure>
+            <figure class="shot"><p class="lab">Now · 2026</p><img src="../thumbnails/tarot-pick-a-card.jpg" alt="A thumbnail I made in 2026: tarot cards and a candle on a wooden table, golden text reading learn tarot with a footnote" loading="lazy"></figure>
+          </div>
+          <div class="after">
+            <a class="btn main" href="mailto:fayepapadop@gmail.com">Send me a message</a>
+            <a class="btn" href="../">See my portfolio</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="box" aria-label="Interests">
+      <h2>Faye's interests</h2>
+      <table class="int">
+        <tr><th>General</th><td>Brand and graphic design, social media, short-form video, thumbnails</td></tr>
+        <tr><th>Music</th><td>GRRRL RUIN: my own songs and covers</td></tr>
+        <tr><th>Films</th><td>Short films I write, shoot and cut: <a href="https://www.youtube.com/@dearkore" target="_blank" rel="noopener">@dearkore</a></td></tr>
+        <tr><th>Writing</th><td><a href="https://substack.com/@kissingcreature" target="_blank" rel="noopener">My Substack</a></td></tr>
+        <tr><th>Tools</th><td>Photoshop, Illustrator, InDesign, After Effects, Figma, Procreate, Cinema 4D</td></tr>
+      </table>
+    </section>
+
+    <section class="box" aria-label="Comments">
+      <h2>Faye's comments</h2>
+      <div class="cmt">
+        <p class="zero">Displaying 0 of 0 comments</p>
+        <p>Nobody has signed the guestbook yet. <a href="mailto:fayepapadop@gmail.com">Be the first</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<p class="foot">Faye Papadopoulos · <a href="mailto:fayepapadop@gmail.com">fayepapadop@gmail.com</a><br>
+View counts are as shown in my YouTube Studio on 24 Nov 2026. The three videos here are unlisted; my other old videos are private. Covers and parodies use other people's songs.</p>
+
+</div>
+
+<script>
+(function(){
+  try{
+    var d=new Date();
+    document.getElementById('today').textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  }catch(e){}
+  var note=document.getElementById('note');
+  if(note&&typeof note.showModal==='function'){
+    var seen=false;
+    try{seen=sessionStorage.getItem('tc-note')==='1'}catch(e){}
+    if(!seen){
+      document.body.classList.add('lock');
+      note.showModal();
+      var close=function(){
+        try{sessionStorage.setItem('tc-note','1')}catch(e){}
+        document.body.classList.remove('lock');
+        if(note.open)note.close();
+      };
+      document.getElementById('noteGo').addEventListener('click',close);
+      note.addEventListener('cancel',function(){try{sessionStorage.setItem('tc-note','1')}catch(e){}document.body.classList.remove('lock')});
+    }
+  }
+  document.querySelectorAll('a.vid').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+a.getAttribute('data-id')+'?autoplay=1&rel=0';
+      f.title=a.getAttribute('data-title')||'Video';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;
+      f.referrerPolicy='strict-origin-when-cross-origin';
+      a.replaceWith(f);
+    });
+  });
+})();
+</script>
+</body>
+</html>

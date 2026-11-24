@@ -455,19 +455,14 @@ View counts are as shown in my YouTube Studio on 24 Nov 2026. The videos you can
   }catch(e){}
   var note=document.getElementById('note');
   if(note&&typeof note.showModal==='function'){
-    var seen=false;
-    try{seen=sessionStorage.getItem('tc-note')==='1'}catch(e){}
-    if(!seen){
-      document.body.classList.add('lock');
-      note.showModal();
-      var close=function(){
-        try{sessionStorage.setItem('tc-note','1')}catch(e){}
-        document.body.classList.remove('lock');
-        if(note.open)note.close();
-      };
-      document.getElementById('noteGo').addEventListener('click',close);
-      note.addEventListener('cancel',function(){try{sessionStorage.setItem('tc-note','1')}catch(e){}document.body.classList.remove('lock')});
-    }
+    /* shows every time the page loads, so everyone who opens the time capsule gets the note */
+    document.body.classList.add('lock');
+    note.showModal();
+    document.getElementById('noteGo').addEventListener('click',function(){
+      document.body.classList.remove('lock');
+      if(note.open)note.close();
+    });
+    note.addEventListener('cancel',function(){document.body.classList.remove('lock')});
   }
   document.querySelectorAll('a.vid').forEach(function(a){
     a.addEventListener('click',function(e){

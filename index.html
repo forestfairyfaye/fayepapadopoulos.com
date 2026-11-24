@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#14361F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 :root{
   /* forest system */
@@ -386,6 +386,32 @@ a{color:inherit;text-decoration:none}
 .info mark{background:rgba(37,107,65,.14);color:var(--green);padding:0 3px}
 .info p a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
 .info p a:hover{color:var(--ink)}
+/* time capsule card: a peek into the nostalgia page, in its own colours on purpose */
+.capsule{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(18px,3vw,38px);align-items:center;padding:clamp(16px,2.4vw,28px);color:#fff;border:2px solid var(--forest);
+  background-color:#12082a;
+  background-image:radial-gradient(circle at 18px 22px,#ff5fb7 1.6px,transparent 2.2px),radial-gradient(circle at 66px 58px,#6df0ff 1.3px,transparent 2px),radial-gradient(circle at 98px 100px,#fff 1px,transparent 1.6px),radial-gradient(circle at 40px 96px,#ffd84d 1.1px,transparent 1.8px);
+  background-size:120px 120px}
+.capsule:focus-visible{outline:3px solid var(--green-br);outline-offset:3px}
+/* hero button to the time capsule, with floating sparkles */
+/* looks like the other outline buttons until you hover or focus it */
+.btn.ghost.capbtn{position:relative;overflow:visible;transition:background .2s,color .2s,border-color .2s,box-shadow .15s}
+.btn.ghost.capbtn:hover,.btn.ghost.capbtn:focus-visible{background:#ff5fb7;color:#14243a;border-color:#14243a;box-shadow:3px 3px 0 #19c3e6}
+.btn.ghost.capbtn:focus-visible{outline:3px solid var(--green-br);outline-offset:3px}
+.capbtn .sp{position:absolute;pointer-events:none;font-style:normal;line-height:1;opacity:0;text-shadow:0 0 6px currentColor}
+.capbtn:hover .sp,.capbtn:focus-visible .sp{animation:spk 2.6s ease-in-out infinite}
+@keyframes spk{0%{opacity:0;transform:translateY(10px) scale(.7) rotate(0)}25%{opacity:1;transform:translateY(-2px) scale(1.5) rotate(25deg)}100%{opacity:0;transform:translateY(-34px) scale(2) rotate(110deg)}}
+@media(max-width:760px){.btn.ghost.capbtn{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.capbtn:hover .sp,.capbtn:focus-visible .sp{animation:none;opacity:1}}
+.cap-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cap-imgs img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:2px solid #3b6ea8;background:#000;transition:transform .2s}
+.cap-imgs img:first-child{grid-column:1/-1}
+.capsule:hover .cap-imgs img{transform:translateY(-2px)}
+.cap-title{font-family:"Press Start 2P",ui-monospace,monospace;font-size:clamp(14px,1.7vw,21px);line-height:1.55;
+  background:linear-gradient(90deg,#ff5fb7,#ffd84d,#6df0ff,#b58cff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.cap-lede{font-size:17px;line-height:1.55;color:#EEE8FA;margin:16px 0 20px;max-width:38ch}
+.cap-go{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;background:#ff5fb7;color:#14243a;border:2px solid #14243a;box-shadow:3px 3px 0 #6df0ff;font-family:var(--fm);font-size:12px;letter-spacing:.03em;text-transform:uppercase;transition:transform .1s,box-shadow .1s}
+.capsule:hover .cap-go{transform:translate(2px,2px);box-shadow:1px 1px 0 #6df0ff}
+@media(max-width:760px){.capsule{grid-template-columns:1fr}}
 .cv>div{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;transition:border-color .25s}
 .cv>div:hover{border-color:var(--green)}
 .cv span{font-family:var(--fm);font-size:12px;color:var(--green);padding-top:3px}
@@ -468,8 +494,8 @@ footer h2 em{font-style:normal;color:var(--green-br)}
     <nav>
       <a href="#work">01 / Work</a>
       <a href="#film">02 / Film &amp; photo</a>
-      <a href="#info">03 / Info</a>
-      <a href="time-capsule/">04 / Time capsule</a>
+      <a href="#capsule">03 / Time capsule</a>
+      <a href="#info">04 / Info</a>
       <a href="#contact">05 / Contact</a>
       <a href="faye-papadopoulos-resume.pdf">06 / CV ↗</a>
       <a href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">07 / LinkedIn ↗</a>
@@ -492,6 +518,7 @@ footer h2 em{font-style:normal;color:var(--green-br)}
             <a class="btn solid" href="mailto:fayepapadop@gmail.com">Email me →</a>
             <a class="btn ghost" href="faye-papadopoulos-resume.pdf">Download CV ↗</a>
             <a class="btn ghost li" href="https://www.linkedin.com/in/fayepapadopoulos/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn ghost capbtn" href="time-capsule/">To the time capsule →<span aria-hidden="true"><i class="sp" style="left:4%;top:-14px;font-size:15px;color:#ffb400;animation-delay:0s">✦</i><i class="sp" style="left:24%;top:-18px;font-size:11px;color:#19c3e6;animation-delay:.9s">★</i><i class="sp" style="left:46%;top:-16px;font-size:16px;color:#9a6cff;animation-delay:1.7s">✦</i><i class="sp" style="left:68%;top:-18px;font-size:12px;color:#ffb400;animation-delay:.4s">★</i><i class="sp" style="left:88%;top:-14px;font-size:15px;color:#e0409a;animation-delay:1.3s">✦</i><i class="sp" style="left:-8px;top:12px;font-size:12px;color:#19c3e6;animation-delay:2.1s">✦</i><i class="sp" style="right:-8px;top:14px;font-size:12px;color:#9a6cff;animation-delay:.6s">★</i></span></a>
           </div>
         </div>
 
@@ -1020,8 +1047,24 @@ footer h2 em{font-style:normal;color:var(--green-br)}
 
     </section>
 
+    <section class="sec" id="capsule">
+      <div class="sec-h"><h2><span class="br"></span>03 / Time capsule</h2><span class="m">Age 8 to now</span></div>
+      <a class="capsule" href="time-capsule/" aria-label="Open Faye's Time Capsule: my earliest work, from stop motion to Minecraft to vlogs and music">
+        <div class="cap-imgs">
+          <img src="time-capsule/arena-brawl.jpg" alt="A Minecraft thumbnail I made as a kid: a skeleton fights my character on a beach, big orange lettering reads ARENA BRAWL" width="1280" height="720" loading="lazy" decoding="async">
+          <img src="thumbnails/gaming-survival-games.jpg" alt="Another Minecraft thumbnail: my character in iron armour, big blocky lettering reads MINECRAFT SURVIVAL GAMES" width="1770" height="995" loading="lazy" decoding="async">
+          <img src="thumbnails/vlog-makeup-asmr.webp" alt="A teen vlog thumbnail: two mirror selfies with the title doing my makeup in asmr" width="1280" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="cap-txt">
+          <p class="cap-title">Faye's Time Capsule</p>
+          <p class="cap-lede">I've been online and making things since I was 8: stop motion, Minecraft parodies, vlogs, music. Be kind, I was a child.</p>
+          <span class="cap-go">Open the time capsule →</span>
+        </div>
+      </a>
+    </section>
+
     <section class="sec" id="info">
-      <div class="sec-h"><h2><span class="br"></span>03 / Info</h2><span class="m">Berlin, DE</span></div>
+      <div class="sec-h"><h2><span class="br"></span>04 / Info</h2><span class="m">Berlin, DE</span></div>
       <div class="info">
         <div>
           <p class="lead">I live in Berlin. I make brand systems and then I <b>keep running them.</b></p>
